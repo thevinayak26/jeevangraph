@@ -1,3 +1,4 @@
+import { syntheticPdf } from './synthetic-pdf.mjs';
 // Synthetic local Supabase integration tests. Never run against a patient-data project.
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
@@ -54,40 +55,6 @@ const p = clients.patient,
   f = clients.facility;
 const versions = [];
 const paths = [];
-function syntheticPdf(date, value) {
-  const lines = [
-    'FICTIONAL TEST REPORT - NOT FOR CLINICAL USE',
-    'JeevanGraph synthetic clinic',
-    `Sample date: ${date}`,
-    `Creatinine ${value} mg/dL`,
-  ];
-  const stream =
-    'BT /F1 14 Tf 48 740 Td ' +
-    lines.map((line, i) => (i ? '0 -26 Td ' : '') + '(' + line + ') Tj').join(' ') +
-    ' ET';
-  const objects = [
-    '<< /Type /Catalog /Pages 2 0 R >>',
-    '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
-    '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>',
-    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',
-    `<< /Length ${Buffer.byteLength(stream)} >>\nstream\n${stream}\nendstream`,
-  ];
-  let pdf = '%PDF-1.4\n';
-  const offsets = [0];
-  objects.forEach((o, i) => {
-    offsets.push(Buffer.byteLength(pdf));
-    pdf += `${i + 1} 0 obj\n${o}\nendobj\n`;
-  });
-  const xref = Buffer.byteLength(pdf);
-  pdf +=
-    'xref\n0 6\n0000000000 65535 f \n' +
-    offsets
-      .slice(1)
-      .map((o) => String(o).padStart(10, '0') + ' 00000 n \n')
-      .join('') +
-    `trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
-  return Buffer.from(pdf);
-}
 const dates = ['2026-01-06', '2026-03-17', '2026-06-19', '2026-09-09'];
 const source = syntheticPdf(dates[0], '0.90');
 for (const [i, value] of ['0.90', '1.10', '1.40', '1.60'].entries()) {
@@ -95,12 +62,10 @@ for (const [i, value] of ['0.90', '1.10', '1.40', '1.60'].entries()) {
   const path = `${identities.patient.id}/${id}/source`;
   paths.push(path);
   ok(
-    await p.storage
-      .from('health-records')
-      .upload(path, syntheticPdf(dates[i], value), {
-        contentType: 'application/pdf',
-        upsert: false,
-      }),
+    await p.storage.from('health-records').upload(path, syntheticPdf(dates[i], value), {
+      contentType: 'application/pdf',
+      upsert: false,
+    }),
   );
   ok(
     await p.rpc('create_draft', {

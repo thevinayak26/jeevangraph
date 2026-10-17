@@ -72,17 +72,21 @@ export async function grantRecords(f: FormData) {
     const { db } = await requireSession();
     const input = grantInput.parse({
       recipient: text(f, 'recipient'),
+      analysis: f.get('analysis') === 'yes',
       purpose: text(f, 'purpose'),
       versions: f.getAll('versions'),
       hours: text(f, 'hours'),
     });
     if (f.get('confirmed') !== 'yes') throw new Error('Explicit consent required');
-    const { error } = await db.rpc('grant_records', {
-      p_recipient: input.recipient,
-      p_purpose: input.purpose,
-      p_versions: input.versions,
-      p_expiry: new Date(Date.now() + input.hours * 3600000).toISOString(),
-    });
+    const { error } = await db.rpc(
+      input.analysis ? 'grant_records_with_analysis' : 'grant_records',
+      {
+        p_recipient: input.recipient,
+        p_purpose: input.purpose,
+        p_versions: input.versions,
+        p_expiry: new Date(Date.now() + input.hours * 3600000).toISOString(),
+      },
+    );
     if (error) throw error;
   });
 }

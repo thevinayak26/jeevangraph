@@ -33,6 +33,8 @@ Implemented and verified against local Supabase sessions. See [Phase 2 status](P
 
 ## Phase 3: evidence intelligence, HealthGraph and family sharing
 
+Implemented and verified locally with separate numerical-analysis permission, current-source graph projections and independent adult-relative sharing. See [Phase 3 status](PHASE_3_STATUS.md) and [setup](PHASE_3_SETUP.md). Hosted behavior and live model access remain unverified.
+
 **Target: hours 7-12.** Add intelligence on top of authorized evidence.
 
 - Deterministic normalization and source-linked kidney trend, including ambiguous-unit/date exclusion.

@@ -2794,3 +2794,247 @@ dialog::backdrop {
   gap: 14px;
   margin: 14px 0;
 }
+
+.phase3-shell {
+  max-width: 1240px;
+}
+.phase3-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin: 20px 0 28px;
+}
+.phase3-nav a {
+  color: var(--primary);
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+}
+.phase3-nav a[aria-current='page'] {
+  border-color: var(--primary);
+  font-weight: 650;
+}
+.phase3-lead {
+  max-width: 75ch;
+  color: var(--muted);
+  font-size: 17px;
+}
+.phase3-notice {
+  padding: 16px;
+  background: var(--surface-soft);
+  border-left: 3px solid var(--primary);
+  margin: 16px 0;
+  max-width: 85ch;
+}
+.phase3-refresh {
+  color: var(--muted);
+  font-size: 13px;
+}
+.phase3-summary {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 80ch;
+  margin: 12px 0;
+}
+.phase3-chart {
+  height: 290px;
+  width: 100%;
+  margin: 28px 0;
+}
+.phase3-table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+.phase3-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 540px;
+}
+.phase3-table-wrap caption {
+  text-align: left;
+  padding: 12px 0;
+  font-weight: 600;
+}
+.phase3-table-wrap th,
+.phase3-table-wrap td {
+  text-align: left;
+  vertical-align: top;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.phase3-table-wrap th {
+  background: var(--surface-soft);
+}
+.phase3-table-wrap details p {
+  max-width: 45ch;
+}
+.phase3-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+.phase3-section-heading p {
+  max-width: 65ch;
+}
+.phase3-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.phase3-tabs button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.graph2d-stage {
+  background: var(--surface-soft);
+  border-radius: 12px;
+  overflow: auto;
+  max-height: 530px;
+  margin: 24px 0;
+}
+.graph2d-stage svg {
+  width: 100%;
+  min-width: 720px;
+  display: block;
+}
+.graph2d-stage svg text {
+  font-size: 14px;
+  fill: var(--text);
+}
+.graph2d-stage g[role='button'] {
+  cursor: pointer;
+}
+.graph-node-person {
+  fill: #126b64;
+}
+.graph-node-record {
+  fill: #257c9c;
+}
+.graph-node-facility {
+  fill: #778b95;
+}
+.graph-node-relative {
+  fill: #ae7445;
+}
+.graph-node-family {
+  fill: #967296;
+}
+.graph3d-stage {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 24px 0;
+}
+.phase3-evidence-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px 24px;
+  padding: 16px 0;
+  list-style: none;
+}
+.phase3-evidence-list li {
+  display: grid;
+  gap: 4px;
+}
+.phase3-evidence-list button {
+  text-align: left;
+  color: var(--primary);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+.phase3-evidence-list span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.phase3-source {
+  border-left: 3px solid var(--primary);
+  padding: 18px;
+  background: var(--surface-soft);
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+.phase3-source .button {
+  justify-self: start;
+}
+.phase3-invitation {
+  padding: 16px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+.phase3-shell details {
+  margin: 14px 0;
+}
+.phase3-shell summary {
+  cursor: pointer;
+  font-weight: 550;
+}
+.phase3-shell ul:not(.phase3-evidence-list) {
+  padding-left: 22px;
+}
+.phase3-shell li {
+  margin: 10px 0;
+}
+@media (max-width: 600px) {
+  .phase3-summary {
+    font-size: 17px;
+  }
+  .phase3-chart {
+    height: 245px;
+  }
+  .phase3-nav {
+    gap: 8px 16px;
+  }
+  .phase3-evidence-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phase3-shell *,
+  .phase3-shell *::before,
+  .phase3-shell *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.phase3-shell .phase3-graph-legend {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 18px 0;
+}
+.phase3-graph-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+.phase3-graph-legend span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.legend-person {
+  background: #126b64;
+}
+.legend-record {
+  background: #257c9c;
+}
+.legend-facility {
+  background: #778b95;
+}
+.legend-relative {
+  background: #ae7445;
+}
+.legend-family {
+  background: #967296;
+}

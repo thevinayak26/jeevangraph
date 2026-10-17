@@ -20,6 +20,7 @@ export const reportContent = z
   .strict();
 export const grantInput = z.object({
   recipient: uuid,
+  analysis: z.boolean().default(false),
   purpose: z.string().trim().min(5).max(200),
   versions: z.array(uuid).min(1).max(50),
   hours: z.coerce.number().int().min(1).max(720),

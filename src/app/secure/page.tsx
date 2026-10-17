@@ -51,11 +51,21 @@ export default async function Secure({
           <button className="button secondary">Sign out</button>
         </form>
       </header>
+      <nav className="phase3-nav" aria-label="Private workspace">
+        <Link href="/secure" aria-current="page">
+          Private records
+        </Link>
+        <Link href="/secure/intelligence">Evidence &amp; HealthGraph</Link>
+        <Link href="/secure/family">Family history</Link>
+      </nav>
       <h1>Your private records</h1>
       <p>
         Signed in as {user.email}. Account ID: <code>{user.id}</code>
       </p>
-      <p>Synthetic test documents only. Family sharing and clinical AI are not enabled here.</p>
+      <p>
+        Synthetic test documents only. Explore evidence and separately consented family context
+        using the private workspace links. Clinical AI is not enabled on your uploads.
+      </p>
       {status && (
         <p role="status">
           {status === 'saved'
@@ -152,8 +162,9 @@ export default async function Secure({
         <section className="panel">
           <h2>3. Share exact versions</h2>
           <p>
-            Read-only, named verified doctor, stated purpose, maximum 30 days. Corrections require a
-            new grant. Revocation cannot retract downloaded copies.
+            Named approved doctor, stated purpose, maximum 30 days. Numerical analysis requires
+            separate permission. Corrections require a new grant. Revocation cannot retract
+            downloaded copies.
           </p>
           <form action={grantRecords}>
             <label>
@@ -175,6 +186,11 @@ export default async function Secure({
               </label>
             ))}
             <label>
+              <input type="checkbox" name="analysis" value="yes" /> Also allow numerical trends and
+              the evidence graph for these selected versions. This does not allow cloud AI
+              processing.
+            </label>
+            <label>
               <input type="checkbox" name="confirmed" value="yes" required /> I authorize this
               doctor to read only the checked versions for this purpose and duration.
             </label>
@@ -189,7 +205,10 @@ export default async function Secure({
               <p>
                 Recipient: <code>{g.recipient_id}</code>
               </p>
-              <p>Purpose: {g.purpose} · Read only</p>
+              <p>
+                Purpose: {g.purpose} ·{' '}
+                {g.action === 'read_analyze' ? 'Read and numerical analysis' : 'Read only'}
+              </p>
               <p>
                 {g.version_ids.length} exact versions · Expires {g.expires_at}
               </p>
@@ -209,7 +228,7 @@ export default async function Secure({
       <section className="panel">
         <h2>Available reviewed records</h2>
         <p>
-          Includes your versions and versions currently shared with your verified doctor account.
+          Includes your versions and versions currently shared with your approved doctor account.
           Facility/platform memberships do not grant chart access.
         </p>
         {!versions.length && <p>No records available.</p>}

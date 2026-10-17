@@ -1,5 +1,7 @@
 # Phase 2: connected synthetic workspace
 
+This describes the Phase 2 baseline. See [Phase 3 setup](PHASE_3_SETUP.md) for the implemented family flows and separate numerical-analysis consent introduced afterward.
+
 ## Status and boundaries
 
 Phase 2 has a separate authenticated workspace at `/account` and `/secure`. The original `/patient/*`, `/doctor/*`, `/facility/*`, and `/platform/*` routes remain labeled fictional previews. Their role switcher is never used for authorization. The connected workspace reads only persisted, authorized records; it does not silently merge the bundled patient's chart into a new account.

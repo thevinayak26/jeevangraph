@@ -1,5 +1,13 @@
 # JeevanGraph
 
+## Phase 3: evidence, HealthGraph and independent family consent
+
+The locally verified connected workspace now includes source-linked numerical observations, 3D/2D/list evidence exploration, self-attested adult-relative links and independently controlled family-condition sharing. Existing read grants do not authorize numerical analysis; patients must select the separate option.
+
+Open `/secure/intelligence` or `/secure/family` after signing in. The optional Gemini adapter is limited to fixed fictional facts, remains disabled by default, and has a no-key fallback. No successful live model request or hosted deployment is claimed.
+
+See [Phase 3 setup and contracts](docs/PHASE_3_SETUP.md), [verification status](docs/PHASE_3_STATUS.md) and [design decisions](docs/PHASE_3_DESIGN.md).
+
 ## Phase 2: connected records and consent
 
 The authenticated synthetic workspace is implemented and tested with local Supabase Auth, Storage and PostgreSQL. Open `/account`, then `/secure`. Existing role routes remain explicitly fictional previews.
@@ -44,8 +52,8 @@ The domain tests verify fixture projection, source values, unknown dates and rel
 Copy `.env.example` to `.env.local` when connecting services. Keep private keys out of source control and client-side code.
 
 - Supabase Auth/Postgres/private Storage is implemented for the connected workspace.
-- Gemini Developer API `gemini-3.5-flash-lite` is selected for the optional later explanation adapter.
-- The app makes no external inference calls. The synthetic preview runs without service credentials; connected records require Supabase configuration.
+- Gemini Developer API `gemini-3.5-flash-lite` has an optional fixed-fictional-fact adapter, disabled by default.
+- By default the app makes no external inference calls. The synthetic preview runs without service credentials; connected records require Supabase configuration.
 - The explanation feature must preserve a deterministic fallback, synthetic-only processing and current evidence permissions.
 
 ## Product flow and roadmap
