@@ -12,7 +12,9 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:connected": "node --env-file=.env.local scripts/test-connected.mjs",
+    "test:rls": "node scripts/test-rls.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",

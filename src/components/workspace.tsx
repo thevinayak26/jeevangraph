@@ -159,6 +159,7 @@ export function Workspace({ data, section }: { data: WorkspaceData; section: Sec
           </span>
         </Link>
         <div className="workspace-label">Your health workspace</div>
+        <Link href="/account" className="nav-item">Sign in to private records</Link>
         <nav aria-label="Main navigation">
           {(isPatient ? nav : nav.filter((n) => n.id === 'overview')).map((item) => (
             <Link

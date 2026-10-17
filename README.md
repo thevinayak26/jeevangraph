@@ -1,15 +1,21 @@
 # JeevanGraph
 
+## Phase 2: connected records and consent
+
+The authenticated synthetic workspace is implemented and tested with local Supabase Auth, Storage and PostgreSQL. Open `/account`, then `/secure`. Existing role routes remain explicitly fictional previews.
+
+See [Phase 2 setup and contracts](docs/PHASE_2_SETUP.md) and [verification status](docs/PHASE_2_STATUS.md). No hosted deployment or clinical validation is claimed. Use synthetic documents only.
+
 A patient-controlled health-history workspace connecting source records, longitudinal measurements and family context.
 
-## Current release: Phase 1
+## Included Phase 1 preview
 
 - Responsive patient overview, timeline, searchable record library and source inspector.
 - Four-point kidney measurement chart with a source-linked data table.
 - Patient-reported biological/social family context and a 2D evidence map.
 - Separate doctor, facility-admin and platform-admin previews.
 - Light, dark and system appearance settings.
-- Fictional fixtures only. No real sign-in, persistent consent, hospital connection or clinical validation is enabled in this release.
+- Fictional fixtures only. Preview routes do not sign in or grant consent. Real sign-in and persistent consent are in the separate Phase 2 workspace; hospital connections and clinical validation are not included.
 
 ## Run locally
 
@@ -31,15 +37,15 @@ npm test
 npm run build
 ```
 
-The domain tests verify fixture projection, source values, unknown dates and relationship handling. They do not prove database security; Supabase sessions, RLS and real consent are Phase 2.
+The domain tests verify fixture projection, source values, unknown dates and relationship handling. They do not prove database security. Phase 2 adds separate PostgreSQL access tests and connected Supabase session/storage tests; see the setup guide.
 
 ## Configuration
 
 Copy `.env.example` to `.env.local` when connecting services. Keep private keys out of source control and client-side code.
 
-- Supabase Auth/Postgres/private Storage is the planned persistent backend.
+- Supabase Auth/Postgres/private Storage is implemented for the connected workspace.
 - Gemini Developer API `gemini-3.5-flash-lite` is selected for the optional later explanation adapter.
-- Phase 1 makes no external inference calls and runs without a key.
+- The app makes no external inference calls. The synthetic preview runs without service credentials; connected records require Supabase configuration.
 - The explanation feature must preserve a deterministic fallback, synthetic-only processing and current evidence permissions.
 
 ## Product flow and roadmap

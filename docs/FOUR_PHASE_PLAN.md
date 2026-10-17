@@ -17,6 +17,8 @@
 
 ## Phase 2: secure records and consent
 
+Implemented and verified against local Supabase sessions. See [Phase 2 status](PHASE_2_STATUS.md) and [setup](PHASE_2_SETUP.md). Hosted deployment remains unverified.
+
 **Target: hours 3-7.** Replace preview behavior with authenticated, persistent patient-controlled access.
 
 - Supabase Auth, trusted memberships and active organization context.

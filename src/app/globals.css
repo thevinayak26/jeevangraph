@@ -2673,3 +2673,124 @@ dialog::backdrop {
     padding-top: 20px;
   }
 }
+
+/* Connected workspace shares the clinical palette with the preview. */
+.secure-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+.secure-shell header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+.secure-shell h1 {
+  margin: 32px 0 12px;
+}
+.secure-shell > p {
+  margin: 12px 0;
+}
+.secure-shell .panel {
+  padding: 24px;
+  margin: 20px 0;
+}
+.secure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.secure-shell form {
+  display: grid;
+  gap: 14px;
+}
+.secure-shell label {
+  display: grid;
+  gap: 7px;
+  line-height: 1.5;
+}
+.secure-shell input:not([type='checkbox']),
+.secure-shell textarea,
+.secure-shell select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #9dbbb1;
+  border-radius: 8px;
+  background: var(--surface, white);
+  color: inherit;
+}
+.secure-shell input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+}
+.secure-shell article {
+  padding: 18px 0;
+  border-top: 1px solid #b6ccc5;
+  overflow-wrap: anywhere;
+}
+.secure-shell pre {
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.secure-shell code {
+  overflow-wrap: anywhere;
+}
+.secure-shell button {
+  min-height: 44px;
+}
+.secure-shell [role='alert'],
+.secure-shell [role='status'] {
+  padding: 16px;
+  border: 1px solid #9dbbb1;
+  border-radius: 8px;
+}
+@media (max-width: 750px) {
+  .secure-grid {
+    grid-template-columns: 1fr;
+  }
+  .secure-shell header {
+    align-items: flex-start;
+  }
+}
+
+.secure-shell h1 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+.secure-shell h2 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+.secure-shell h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+.secure-shell .panel > p {
+  margin: 10px 0 18px;
+}
+.secure-shell label:has(input[type='checkbox']) {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.secure-shell input[type='checkbox'] {
+  flex: 0 0 18px;
+  margin-top: 2px;
+}
+.secure-shell .button {
+  white-space: normal;
+}
+.secure-shell fieldset {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.secure-measurements {
+  display: grid;
+  gap: 14px;
+  margin: 14px 0;
+}
