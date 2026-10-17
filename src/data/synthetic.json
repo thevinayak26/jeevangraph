@@ -1,0 +1,1242 @@
+{
+  "schemaVersion": "1.0",
+  "syntheticOnly": true,
+  "notice": "All people, facilities, records and identifiers are fictional. Not for clinical use.",
+  "uuidNamespace": "650c0a72-2659-4fdc-9f4e-a5ac0c9da271",
+  "accounts": [
+    {
+      "alias": "U_PATIENT",
+      "id": "3125a75a-4e81-5a9f-b4f9-666fe40aa519",
+      "displayName": "Aarav Sen",
+      "demoEmail": "patient@jeevangraph.example",
+      "role": "patient",
+      "organizationId": null,
+      "status": "active",
+      "isSynthetic": true
+    },
+    {
+      "alias": "U_DOCTOR",
+      "id": "1e47a1af-173f-5617-befb-3412a6d16ec8",
+      "displayName": "Dr Mira Rao",
+      "demoEmail": "doctor@jeevangraph.example",
+      "role": "doctor",
+      "organizationId": "8c0c0571-fc28-5235-a96a-867fe8efc891",
+      "status": "active",
+      "isSynthetic": true
+    },
+    {
+      "alias": "U_OTHER_DOCTOR",
+      "id": "fa7f3d9d-0658-519b-b273-dfcf7656837f",
+      "displayName": "Dr Ishan Das",
+      "demoEmail": "other-doctor@jeevangraph.example",
+      "role": "doctor",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "status": "active",
+      "isSynthetic": true
+    },
+    {
+      "alias": "U_FACILITY",
+      "id": "76308e69-55c6-5ff7-9245-4d58c60c7dba",
+      "displayName": "Facility Operator",
+      "demoEmail": "facility@jeevangraph.example",
+      "role": "facility_admin",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "status": "active",
+      "isSynthetic": true
+    },
+    {
+      "alias": "U_PLATFORM",
+      "id": "fd171c0b-2ed3-50dd-a160-80ea656d6378",
+      "displayName": "Platform Operator",
+      "demoEmail": "platform@jeevangraph.example",
+      "role": "platform_admin",
+      "organizationId": "7cc7764e-b51b-5f39-9d72-c0047121ec2f",
+      "status": "active",
+      "isSynthetic": true
+    },
+    {
+      "alias": "U_RELATIVE",
+      "id": "c7d5efc2-0fb6-55e2-a263-f8acfe14c4b4",
+      "displayName": "Nisha Sen",
+      "demoEmail": "relative@jeevangraph.example",
+      "role": "patient",
+      "organizationId": null,
+      "status": "active",
+      "isSynthetic": true
+    },
+    {
+      "alias": "U_FATHER",
+      "id": "57d0b000-dc5c-5493-80fa-dab084ebe1a1",
+      "displayName": "Dev Sen",
+      "demoEmail": "father@jeevangraph.example",
+      "role": "patient",
+      "organizationId": null,
+      "status": "active",
+      "isSynthetic": true
+    }
+  ],
+  "patients": [
+    {
+      "alias": "P_AARAV",
+      "id": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "ownerUserId": "3125a75a-4e81-5a9f-b4f9-666fe40aa519",
+      "displayName": "Aarav Sen",
+      "dob": "1988-02-14",
+      "dobPrecision": "exact",
+      "isSynthetic": true,
+      "demoIdentifier": "JG-DEMO-0001"
+    },
+    {
+      "alias": "P_NISHA",
+      "id": "dcdb5ae7-8023-5b38-98e2-884e22ea5fb3",
+      "ownerUserId": "c7d5efc2-0fb6-55e2-a263-f8acfe14c4b4",
+      "displayName": "Nisha Sen",
+      "dob": "1962-05-20",
+      "dobPrecision": "exact",
+      "isSynthetic": true,
+      "demoIdentifier": "JG-DEMO-0002"
+    },
+    {
+      "alias": "P_DEV",
+      "id": "b7399dbe-bc26-56c2-a566-9cfb52771c57",
+      "ownerUserId": "57d0b000-dc5c-5493-80fa-dab084ebe1a1",
+      "displayName": "Dev Sen",
+      "dob": "1959-07-08",
+      "dobPrecision": "exact",
+      "isSynthetic": true,
+      "demoIdentifier": "JG-DEMO-0003"
+    }
+  ],
+  "organizations": [
+    {
+      "alias": "ORG_A",
+      "id": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "name": "Aster Grove Demo Hospital",
+      "kind": "hospital",
+      "status": "active",
+      "verificationMode": "simulated"
+    },
+    {
+      "alias": "ORG_B",
+      "id": "8408d7e1-33af-5271-923c-9dac54627500",
+      "name": "Beacon Vale Demo Diagnostics",
+      "kind": "laboratory",
+      "status": "active",
+      "verificationMode": "simulated"
+    },
+    {
+      "alias": "ORG_C",
+      "id": "8c0c0571-fc28-5235-a96a-867fe8efc891",
+      "name": "Cedar Bridge Demo Hospital",
+      "kind": "hospital",
+      "status": "active",
+      "verificationMode": "simulated"
+    },
+    {
+      "alias": "ORG_PLATFORM",
+      "id": "7cc7764e-b51b-5f39-9d72-c0047121ec2f",
+      "name": "JeevanGraph Demo Platform",
+      "kind": "demo_platform",
+      "status": "active",
+      "verificationMode": "simulated"
+    }
+  ],
+  "records": [
+    {
+      "alias": "R01",
+      "id": "4f833c36-5ebd-5cf5-a0de-3dd8038fc35e",
+      "versionId": "eae6d675-417b-5d49-bf77-aef6e306fb78",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Historical birth record",
+      "kind": "birth_record",
+      "clinicalDate": "1988-02-14",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "1988-02-14",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R01",
+      "markdownPath": "fixtures/records/01_birth_record.md",
+      "sections": [
+        {
+          "heading": "Event",
+          "lines": [
+            "Fictional historical neonatal-card transcription. Term delivery; birth weight recorded as 3.10 kg.",
+            "Sex recorded on source: male. No neonatal laboratory results are supplied."
+          ]
+        },
+        {
+          "heading": "Source limitations",
+          "lines": [
+            "This is a synthetic typed reconstruction, not a government birth certificate.",
+            "Original historical card is unavailable in this scenario. Later childhood history is incomplete."
+          ]
+        }
+      ],
+      "observations": []
+    },
+    {
+      "alias": "R02",
+      "id": "3c6e9286-4449-5b30-b11d-64fa2cfaadc1",
+      "versionId": "975570ae-f967-5bce-9191-f76be7beb9a6",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Historical newborn immunization entry",
+      "kind": "immunization",
+      "clinicalDate": "1988-02-15",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "1988-02-15",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R02",
+      "markdownPath": "fixtures/records/02_newborn_immunization.md",
+      "sections": [
+        {
+          "heading": "Recorded event",
+          "lines": [
+            "BCG vaccination recorded as administered on the fictional historical card.",
+            "Dose volume, lot number and administrator registration: not recorded."
+          ]
+        },
+        {
+          "heading": "Interpretation boundary",
+          "lines": [
+            "Historical event only. This is not a vaccination recommendation, schedule or valid certificate."
+          ]
+        }
+      ],
+      "observations": []
+    },
+    {
+      "alias": "R03",
+      "id": "94186869-4a73-50c4-b606-da0e639b9fb1",
+      "versionId": "ef13f769-7580-5179-ac0b-2225edac4b3d",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Outpatient prescription specimen",
+      "kind": "prescription",
+      "clinicalDate": "2026-01-06",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-01-06",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R03",
+      "markdownPath": "fixtures/records/03_january_prescription.md",
+      "sections": [
+        {
+          "heading": "Encounter",
+          "lines": [
+            "Fictional clinician: Dr Leena Varma. Specialty: general medicine. Registration: DEMO ONLY, not a real registration.",
+            "Reason for visit: blood-pressure follow-up and intermittent fatigue. BP on specimen: 146/92 mmHg.",
+            "Documented history on this specimen: elevated blood pressure under review. No kidney diagnosis recorded."
+          ]
+        },
+        {
+          "heading": "Prescription as written",
+          "lines": [
+            "Amlodipine tablet 5 mg: one tablet by mouth once daily for 14 days; quantity 14.",
+            "This historical specimen does not establish current medication use or adherence."
+          ]
+        },
+        {
+          "heading": "Recorded plan",
+          "lines": [
+            "Routine laboratory panel requested. Follow-up documented in two weeks.",
+            "No real prescription, signature or dispensing authorization is provided."
+          ]
+        }
+      ],
+      "observations": []
+    },
+    {
+      "alias": "R04",
+      "id": "a0d6dd1d-8c32-59fd-8c3a-921186692a9d",
+      "versionId": "72f10b36-8370-5faa-adb2-2aa4081621e0",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Renal and electrolyte panel",
+      "kind": "lab_report",
+      "clinicalDate": "2026-01-06",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-01-06",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R04",
+      "markdownPath": "fixtures/records/04_january_renal_panel.md",
+      "sections": [
+        {
+          "heading": "Sample and reporting",
+          "lines": [
+            "Sample: venous blood, serum. Collection date equals report date on this specimen.",
+            "Internal specimen identifiers are fictional. No laboratory accreditation is asserted."
+          ]
+        },
+        {
+          "heading": "Laboratory comment",
+          "lines": [
+            "Values and intervals are invented for software testing. Methods are not specified as cross-laboratory equivalent.",
+            "Reported eGFR is imported test data, not recalculated by JeevanGraph. Interpretive clinical conclusions are not provided."
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "alias": "R04.creatinine",
+          "id": "76acbf9d-3015-52db-8015-bd5051d24df5",
+          "recordVersionId": "72f10b36-8370-5faa-adb2-2aa4081621e0",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "creatinine",
+          "rawLabel": "Serum creatinine",
+          "rawValue": "0.90",
+          "rawUnit": "mg/dL",
+          "valueNumeric": 0.9,
+          "comparator": "eq",
+          "normalizedValue": 0.9,
+          "normalizedUnit": "mg/dL",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen adult interval: 0.70-1.30 mg/dL",
+          "methodText": "Assay method not stated",
+          "sampleDate": "2026-01-06",
+          "sourcePage": 1,
+          "sourceExcerpt": "Serum creatinine 0.90 mg/dL",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R04.egfr_reported",
+          "id": "e5300c49-7f29-5c5b-a74b-d6ff33295d8c",
+          "recordVersionId": "72f10b36-8370-5faa-adb2-2aa4081621e0",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "egfr_reported",
+          "rawLabel": "Reported eGFR",
+          "rawValue": "104",
+          "rawUnit": "mL/min/1.73m2",
+          "valueNumeric": 104,
+          "comparator": "eq",
+          "normalizedValue": 104,
+          "normalizedUnit": "mL/min/1.73m2",
+          "normalizationRule": "identity_v1",
+          "referenceText": "No clinical stage assigned in this specimen",
+          "methodText": "Equation not stated; fictional lab-reported estimate",
+          "sampleDate": "2026-01-06",
+          "sourcePage": 1,
+          "sourceExcerpt": "Reported eGFR 104 mL/min/1.73m2",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R04.sodium",
+          "id": "dd920f79-3faa-55be-b025-53c3044a0e8e",
+          "recordVersionId": "72f10b36-8370-5faa-adb2-2aa4081621e0",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "sodium",
+          "rawLabel": "Sodium",
+          "rawValue": "140",
+          "rawUnit": "mmol/L",
+          "valueNumeric": 140,
+          "comparator": "eq",
+          "normalizedValue": 140,
+          "normalizedUnit": "mmol/L",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 135-145 mmol/L",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-01-06",
+          "sourcePage": 1,
+          "sourceExcerpt": "Sodium 140 mmol/L",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R04.potassium",
+          "id": "8f900a35-578a-5c8c-ba49-5f59ba295c7e",
+          "recordVersionId": "72f10b36-8370-5faa-adb2-2aa4081621e0",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "potassium",
+          "rawLabel": "Potassium",
+          "rawValue": "4.2",
+          "rawUnit": "mmol/L",
+          "valueNumeric": 4.2,
+          "comparator": "eq",
+          "normalizedValue": 4.2,
+          "normalizedUnit": "mmol/L",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 3.5-5.1 mmol/L",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-01-06",
+          "sourcePage": 1,
+          "sourceExcerpt": "Potassium 4.2 mmol/L",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R04.bun",
+          "id": "a4a4baa7-20ac-55e1-b4c2-64f6663a3d82",
+          "recordVersionId": "72f10b36-8370-5faa-adb2-2aa4081621e0",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "bun",
+          "rawLabel": "Blood urea nitrogen",
+          "rawValue": "13",
+          "rawUnit": "mg/dL",
+          "valueNumeric": 13,
+          "comparator": "eq",
+          "normalizedValue": 13,
+          "normalizedUnit": "mg/dL",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 7-20 mg/dL",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-01-06",
+          "sourcePage": 1,
+          "sourceExcerpt": "Blood urea nitrogen 13 mg/dL",
+          "reviewState": "patient_checked"
+        }
+      ]
+    },
+    {
+      "alias": "R05",
+      "id": "b6423543-1246-5b21-9e0d-29b3ae647e8f",
+      "versionId": "c7ddfea3-c1c2-5aee-921c-7d2a6e5db589",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Medication-history prescription specimen",
+      "kind": "prescription",
+      "clinicalDate": "2026-03-12",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-03-12",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R05",
+      "markdownPath": "fixtures/records/05_march_prescription.md",
+      "sections": [
+        {
+          "heading": "Encounter",
+          "lines": [
+            "Fictional clinician: Dr Leena Varma, general medicine. Registration: DEMO ONLY.",
+            "Reason: scheduled blood-pressure follow-up. BP on specimen: 138/86 mmHg."
+          ]
+        },
+        {
+          "heading": "Medication line as written",
+          "lines": [
+            "Amlodipine tablet 5 mg: one tablet by mouth once daily for 14 days; quantity 14.",
+            "Status in record: prescribed historically, actual current use unknown."
+          ]
+        },
+        {
+          "heading": "Recorded plan",
+          "lines": [
+            "Blood tests to be performed at a diagnostic facility. Prior report should accompany clinical review.",
+            "Synthetic text only; no real signature or prescribing authorization."
+          ]
+        }
+      ],
+      "observations": []
+    },
+    {
+      "alias": "R06",
+      "id": "8f9f5e3c-ca8e-56a1-b2f1-79f38c352fac",
+      "versionId": "a1bd6bb6-8d04-5d54-9f50-a0bf0f04796f",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "8408d7e1-33af-5271-923c-9dac54627500",
+      "title": "Renal and electrolyte panel",
+      "kind": "lab_report",
+      "clinicalDate": "2026-03-17",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-03-17",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "B-DEMO-R06",
+      "markdownPath": "fixtures/records/06_march_renal_panel.md",
+      "sections": [
+        {
+          "heading": "Sample and reporting",
+          "lines": [
+            "Sample: venous blood, serum. Collection date equals report date on this specimen.",
+            "Internal specimen identifiers are fictional. No laboratory accreditation is asserted."
+          ]
+        },
+        {
+          "heading": "Laboratory comment",
+          "lines": [
+            "Values and intervals are invented for software testing. Methods are not specified as cross-laboratory equivalent.",
+            "Reported eGFR is imported test data, not recalculated by JeevanGraph. Interpretive clinical conclusions are not provided."
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "alias": "R06.creatinine",
+          "id": "c8b704d4-250e-5c3e-8bdb-4c53d5d01e88",
+          "recordVersionId": "a1bd6bb6-8d04-5d54-9f50-a0bf0f04796f",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "creatinine",
+          "rawLabel": "Serum creatinine",
+          "rawValue": "1.10",
+          "rawUnit": "mg/dL",
+          "valueNumeric": 1.1,
+          "comparator": "eq",
+          "normalizedValue": 1.1,
+          "normalizedUnit": "mg/dL",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen adult interval: 0.70-1.30 mg/dL",
+          "methodText": "Assay method not stated",
+          "sampleDate": "2026-03-17",
+          "sourcePage": 1,
+          "sourceExcerpt": "Serum creatinine 1.10 mg/dL",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R06.egfr_reported",
+          "id": "fd8228bc-231e-5eec-8332-653dddaee15b",
+          "recordVersionId": "a1bd6bb6-8d04-5d54-9f50-a0bf0f04796f",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "egfr_reported",
+          "rawLabel": "Reported eGFR",
+          "rawValue": "88",
+          "rawUnit": "mL/min/1.73m2",
+          "valueNumeric": 88,
+          "comparator": "eq",
+          "normalizedValue": 88,
+          "normalizedUnit": "mL/min/1.73m2",
+          "normalizationRule": "identity_v1",
+          "referenceText": "No clinical stage assigned in this specimen",
+          "methodText": "Equation not stated; fictional lab-reported estimate",
+          "sampleDate": "2026-03-17",
+          "sourcePage": 1,
+          "sourceExcerpt": "Reported eGFR 88 mL/min/1.73m2",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R06.sodium",
+          "id": "118819bf-e9d8-5848-a841-6d04b206d7bc",
+          "recordVersionId": "a1bd6bb6-8d04-5d54-9f50-a0bf0f04796f",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "sodium",
+          "rawLabel": "Sodium",
+          "rawValue": "139",
+          "rawUnit": "mmol/L",
+          "valueNumeric": 139,
+          "comparator": "eq",
+          "normalizedValue": 139,
+          "normalizedUnit": "mmol/L",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 135-145 mmol/L",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-03-17",
+          "sourcePage": 1,
+          "sourceExcerpt": "Sodium 139 mmol/L",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R06.potassium",
+          "id": "0ac36c9c-18e3-5a76-b811-6599226a1b2d",
+          "recordVersionId": "a1bd6bb6-8d04-5d54-9f50-a0bf0f04796f",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "potassium",
+          "rawLabel": "Potassium",
+          "rawValue": "4.4",
+          "rawUnit": "mmol/L",
+          "valueNumeric": 4.4,
+          "comparator": "eq",
+          "normalizedValue": 4.4,
+          "normalizedUnit": "mmol/L",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 3.5-5.1 mmol/L",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-03-17",
+          "sourcePage": 1,
+          "sourceExcerpt": "Potassium 4.4 mmol/L",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R06.bun",
+          "id": "2ebfe4b7-fa31-56e4-938f-3c215a82059e",
+          "recordVersionId": "a1bd6bb6-8d04-5d54-9f50-a0bf0f04796f",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "bun",
+          "rawLabel": "Blood urea nitrogen",
+          "rawValue": "16",
+          "rawUnit": "mg/dL",
+          "valueNumeric": 16,
+          "comparator": "eq",
+          "normalizedValue": 16,
+          "normalizedUnit": "mg/dL",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 7-20 mg/dL",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-03-17",
+          "sourcePage": 1,
+          "sourceExcerpt": "Blood urea nitrogen 16 mg/dL",
+          "reviewState": "patient_checked"
+        }
+      ]
+    },
+    {
+      "alias": "R07",
+      "id": "56228781-f17b-5d67-b929-176be8afa430",
+      "versionId": "e7be14a5-920f-5237-af0e-773dd53a8391",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "8c0c0571-fc28-5235-a96a-867fe8efc891",
+      "title": "Ultrasound report specimen",
+      "kind": "imaging_report",
+      "clinicalDate": "2026-06-19",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-06-19",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "C-DEMO-R07",
+      "markdownPath": "fixtures/records/07_june_ultrasound_report.md",
+      "sections": [
+        {
+          "heading": "Examination",
+          "lines": [
+            "Ultrasound: kidneys and urinary bladder. Text-only fictional radiology report; no diagnostic images supplied.",
+            "Fictional radiologist: Dr Anika Paul. Registration: DEMO ONLY."
+          ]
+        },
+        {
+          "heading": "Findings as reported",
+          "lines": [
+            "Right kidney length 10.5 cm; left kidney length 10.7 cm.",
+            "No hydronephrosis or visible calculus described. Urinary bladder appears unremarkable on the specimen."
+          ]
+        },
+        {
+          "heading": "Impression as reported",
+          "lines": [
+            "No obstructive change described in this fictional report.",
+            "This imaging text does not establish normal kidney function and does not explain the laboratory trend. JeevanGraph performs no imaging diagnosis."
+          ]
+        }
+      ],
+      "observations": []
+    },
+    {
+      "alias": "R08",
+      "id": "de56addb-af24-5a31-bbf6-30b137b81621",
+      "versionId": "28fba3d4-d822-502d-a71d-5b5fe2b5c041",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "8c0c0571-fc28-5235-a96a-867fe8efc891",
+      "title": "Renal and electrolyte panel",
+      "kind": "lab_report",
+      "clinicalDate": "2026-06-19",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-06-19",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "C-DEMO-R08",
+      "markdownPath": "fixtures/records/08_june_renal_panel.md",
+      "sections": [
+        {
+          "heading": "Sample and reporting",
+          "lines": [
+            "Sample: venous blood, serum. Collection date equals report date on this specimen.",
+            "Internal specimen identifiers are fictional. No laboratory accreditation is asserted."
+          ]
+        },
+        {
+          "heading": "Laboratory comment",
+          "lines": [
+            "Values and intervals are invented for software testing. Methods are not specified as cross-laboratory equivalent.",
+            "Reported eGFR is imported test data, not recalculated by JeevanGraph. Interpretive clinical conclusions are not provided."
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "alias": "R08.creatinine",
+          "id": "e2167ce1-2217-5ba5-ad65-a4ce57257dcd",
+          "recordVersionId": "28fba3d4-d822-502d-a71d-5b5fe2b5c041",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "creatinine",
+          "rawLabel": "Serum creatinine",
+          "rawValue": "1.40",
+          "rawUnit": "mg/dL",
+          "valueNumeric": 1.4,
+          "comparator": "eq",
+          "normalizedValue": 1.4,
+          "normalizedUnit": "mg/dL",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen adult interval: 0.70-1.30 mg/dL",
+          "methodText": "Assay method not stated",
+          "sampleDate": "2026-06-19",
+          "sourcePage": 1,
+          "sourceExcerpt": "Serum creatinine 1.40 mg/dL",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R08.egfr_reported",
+          "id": "f1b56570-5326-5827-97a7-b4f5e3c31b31",
+          "recordVersionId": "28fba3d4-d822-502d-a71d-5b5fe2b5c041",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "egfr_reported",
+          "rawLabel": "Reported eGFR",
+          "rawValue": "66",
+          "rawUnit": "mL/min/1.73m2",
+          "valueNumeric": 66,
+          "comparator": "eq",
+          "normalizedValue": 66,
+          "normalizedUnit": "mL/min/1.73m2",
+          "normalizationRule": "identity_v1",
+          "referenceText": "No clinical stage assigned in this specimen",
+          "methodText": "Equation not stated; fictional lab-reported estimate",
+          "sampleDate": "2026-06-19",
+          "sourcePage": 1,
+          "sourceExcerpt": "Reported eGFR 66 mL/min/1.73m2",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R08.sodium",
+          "id": "f01961bf-f4ff-502a-bc68-9791a2bc4ea7",
+          "recordVersionId": "28fba3d4-d822-502d-a71d-5b5fe2b5c041",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "sodium",
+          "rawLabel": "Sodium",
+          "rawValue": "138",
+          "rawUnit": "mmol/L",
+          "valueNumeric": 138,
+          "comparator": "eq",
+          "normalizedValue": 138,
+          "normalizedUnit": "mmol/L",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 135-145 mmol/L",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-06-19",
+          "sourcePage": 1,
+          "sourceExcerpt": "Sodium 138 mmol/L",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R08.potassium",
+          "id": "75a1aef1-0892-549c-b376-64212427ef45",
+          "recordVersionId": "28fba3d4-d822-502d-a71d-5b5fe2b5c041",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "potassium",
+          "rawLabel": "Potassium",
+          "rawValue": "4.6",
+          "rawUnit": "mmol/L",
+          "valueNumeric": 4.6,
+          "comparator": "eq",
+          "normalizedValue": 4.6,
+          "normalizedUnit": "mmol/L",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 3.5-5.1 mmol/L",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-06-19",
+          "sourcePage": 1,
+          "sourceExcerpt": "Potassium 4.6 mmol/L",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R08.bun",
+          "id": "bbb1d366-366b-52d7-b71a-1cc8689bec31",
+          "recordVersionId": "28fba3d4-d822-502d-a71d-5b5fe2b5c041",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "bun",
+          "rawLabel": "Blood urea nitrogen",
+          "rawValue": "22",
+          "rawUnit": "mg/dL",
+          "valueNumeric": 22,
+          "comparator": "eq",
+          "normalizedValue": 22,
+          "normalizedUnit": "mg/dL",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 7-20 mg/dL",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-06-19",
+          "sourcePage": 1,
+          "sourceExcerpt": "Blood urea nitrogen 22 mg/dL",
+          "reviewState": "patient_checked"
+        }
+      ]
+    },
+    {
+      "alias": "R09",
+      "id": "dca7c055-7243-52fc-81f4-764eceeb65c1",
+      "versionId": "f859fc92-eed4-5e8b-8ec3-b5dcf30b3307",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Renal and electrolyte panel",
+      "kind": "lab_report",
+      "clinicalDate": "2026-09-09",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-09-09",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R09",
+      "markdownPath": "fixtures/records/09_september_renal_panel.md",
+      "sections": [
+        {
+          "heading": "Sample and reporting",
+          "lines": [
+            "Sample: venous blood, serum. Collection date equals report date on this specimen.",
+            "Internal specimen identifiers are fictional. No laboratory accreditation is asserted."
+          ]
+        },
+        {
+          "heading": "Laboratory comment",
+          "lines": [
+            "Values and intervals are invented for software testing. Methods are not specified as cross-laboratory equivalent.",
+            "Reported eGFR is imported test data, not recalculated by JeevanGraph. Interpretive clinical conclusions are not provided."
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "alias": "R09.creatinine",
+          "id": "c22afa93-ef5a-599b-9172-24dae9d2c810",
+          "recordVersionId": "f859fc92-eed4-5e8b-8ec3-b5dcf30b3307",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "creatinine",
+          "rawLabel": "Serum creatinine",
+          "rawValue": "1.60",
+          "rawUnit": "mg/dL",
+          "valueNumeric": 1.6,
+          "comparator": "eq",
+          "normalizedValue": 1.6,
+          "normalizedUnit": "mg/dL",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen adult interval: 0.70-1.30 mg/dL",
+          "methodText": "Assay method not stated",
+          "sampleDate": "2026-09-09",
+          "sourcePage": 1,
+          "sourceExcerpt": "Serum creatinine 1.60 mg/dL",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R09.egfr_reported",
+          "id": "b8229749-eb25-5d65-951d-c3fd4ae415d5",
+          "recordVersionId": "f859fc92-eed4-5e8b-8ec3-b5dcf30b3307",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "egfr_reported",
+          "rawLabel": "Reported eGFR",
+          "rawValue": "57",
+          "rawUnit": "mL/min/1.73m2",
+          "valueNumeric": 57,
+          "comparator": "eq",
+          "normalizedValue": 57,
+          "normalizedUnit": "mL/min/1.73m2",
+          "normalizationRule": "identity_v1",
+          "referenceText": "No clinical stage assigned in this specimen",
+          "methodText": "Equation not stated; fictional lab-reported estimate",
+          "sampleDate": "2026-09-09",
+          "sourcePage": 1,
+          "sourceExcerpt": "Reported eGFR 57 mL/min/1.73m2",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R09.sodium",
+          "id": "02c32bbf-ae3e-51a7-b98c-0565c5cbd08c",
+          "recordVersionId": "f859fc92-eed4-5e8b-8ec3-b5dcf30b3307",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "sodium",
+          "rawLabel": "Sodium",
+          "rawValue": "138",
+          "rawUnit": "mmol/L",
+          "valueNumeric": 138,
+          "comparator": "eq",
+          "normalizedValue": 138,
+          "normalizedUnit": "mmol/L",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 135-145 mmol/L",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-09-09",
+          "sourcePage": 1,
+          "sourceExcerpt": "Sodium 138 mmol/L",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R09.potassium",
+          "id": "d0b2438a-d198-5e25-a7b5-2f0a5d8eb512",
+          "recordVersionId": "f859fc92-eed4-5e8b-8ec3-b5dcf30b3307",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "potassium",
+          "rawLabel": "Potassium",
+          "rawValue": "4.8",
+          "rawUnit": "mmol/L",
+          "valueNumeric": 4.8,
+          "comparator": "eq",
+          "normalizedValue": 4.8,
+          "normalizedUnit": "mmol/L",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 3.5-5.1 mmol/L",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-09-09",
+          "sourcePage": 1,
+          "sourceExcerpt": "Potassium 4.8 mmol/L",
+          "reviewState": "patient_checked"
+        },
+        {
+          "alias": "R09.bun",
+          "id": "a63a35c1-11dc-5f6a-89a3-7cd6d61c96a4",
+          "recordVersionId": "f859fc92-eed4-5e8b-8ec3-b5dcf30b3307",
+          "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+          "analyteKey": "bun",
+          "rawLabel": "Blood urea nitrogen",
+          "rawValue": "26",
+          "rawUnit": "mg/dL",
+          "valueNumeric": 26,
+          "comparator": "eq",
+          "normalizedValue": 26,
+          "normalizedUnit": "mg/dL",
+          "normalizationRule": "identity_v1",
+          "referenceText": "Specimen interval: 7-20 mg/dL",
+          "methodText": "Method not stated",
+          "sampleDate": "2026-09-09",
+          "sourcePage": 1,
+          "sourceExcerpt": "Blood urea nitrogen 26 mg/dL",
+          "reviewState": "patient_checked"
+        }
+      ]
+    },
+    {
+      "alias": "R10",
+      "id": "22367c28-abcb-59e5-b49a-218699b94005",
+      "versionId": "c096645c-7e25-50e7-bd4b-999316a755d9",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Follow-up note specimen",
+      "kind": "encounter_note",
+      "clinicalDate": "2026-09-10",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-09-10",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R10",
+      "markdownPath": "fixtures/records/10_september_review_note.md",
+      "sections": [
+        {
+          "heading": "Encounter",
+          "lines": [
+            "Fictional clinician: Dr Leena Varma. Registration: DEMO ONLY.",
+            "Reason: review of longitudinal reports. Patient brings records from three fictional facilities."
+          ]
+        },
+        {
+          "heading": "Documented note",
+          "lines": [
+            "Reported creatinine values differ across the available dates. Prior source reports are requested for comparison.",
+            "Clinical interpretation and next steps are left to a real qualified clinician outside this synthetic demonstration."
+          ]
+        },
+        {
+          "heading": "Medication status",
+          "lines": [
+            "No medication change is encoded in this specimen. Medication reconciliation and adherence are not established."
+          ]
+        }
+      ],
+      "observations": []
+    },
+    {
+      "alias": "R11",
+      "id": "341dd9cc-4303-5341-ae39-5f160e47b65c",
+      "versionId": "81520d46-0626-5355-95e0-b65089a76eb7",
+      "versionNumber": 1,
+      "patientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Childhood immunization transcription",
+      "kind": "immunization",
+      "clinicalDate": null,
+      "datePrecision": "year",
+      "clinicalYear": 1994,
+      "reportDate": null,
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R11",
+      "markdownPath": "fixtures/records/11_childhood_immunization.md",
+      "sections": [
+        {
+          "heading": "Recorded event",
+          "lines": [
+            "Vaccine label transcribed as DPT booster. Year recorded: 1994. Exact date and dose number are unknown.",
+            "Lot, dose volume and administrator: not recorded."
+          ]
+        },
+        {
+          "heading": "Source limitations",
+          "lines": [
+            "Synthetic historical entry with year-only precision. Do not invent 1 January as the clinical date.",
+            "This record is not evidence of a complete childhood vaccination series."
+          ]
+        }
+      ],
+      "observations": []
+    },
+    {
+      "alias": "R12",
+      "id": "0ee5842a-9955-5495-a1d0-e10491378b4e",
+      "versionId": "b85efd16-0042-550d-baa6-5e98e3d229b9",
+      "versionNumber": 1,
+      "patientId": "dcdb5ae7-8023-5b38-98e2-884e22ea5fb3",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Relative-owned family-history statement",
+      "kind": "encounter_note",
+      "clinicalDate": "2026-10-01",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-10-01",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R12",
+      "markdownPath": "fixtures/records/12_relative_mother_history.md",
+      "sections": [
+        {
+          "heading": "Relative report",
+          "lines": [
+            "Nisha Sen, fictional adult, reports breast cancer diagnosed at age 44.",
+            "No pathology report, genetic result, cancer subtype or staging document is attached."
+          ]
+        },
+        {
+          "heading": "Ownership and sharing",
+          "lines": [
+            "This statement belongs to the fictional relative account, not Aarav.",
+            "Linking family identities grants no access. This document remains unavailable unless the relative separately grants the exact resource.",
+            "Sharing a short assertion does not automatically share this full source statement."
+          ]
+        }
+      ],
+      "observations": []
+    },
+    {
+      "alias": "R13",
+      "id": "3aa80f3a-1751-559d-8cc7-4f21aceece70",
+      "versionId": "96132dda-c9e1-5325-8e1b-3230719986a3",
+      "versionNumber": 1,
+      "patientId": "b7399dbe-bc26-56c2-a566-9cfb52771c57",
+      "organizationId": "c39149cb-bff9-5f79-9345-60e56d1814d0",
+      "title": "Relative-owned medical-history statement",
+      "kind": "encounter_note",
+      "clinicalDate": "2026-10-01",
+      "datePrecision": "exact",
+      "clinicalYear": null,
+      "reportDate": "2026-10-01",
+      "status": "reviewed",
+      "reviewState": "patient_checked",
+      "extractionMethod": "fixture",
+      "isSynthetic": true,
+      "sourceRecordId": "A-DEMO-R13",
+      "markdownPath": "fixtures/records/13_relative_father_history.md",
+      "sections": [
+        {
+          "heading": "Relative report",
+          "lines": [
+            "Dev Sen, fictional adult, reports type 2 diabetes diagnosed at age 48.",
+            "Current medicines, glucose results and complications are not provided."
+          ]
+        },
+        {
+          "heading": "Ownership and sharing",
+          "lines": [
+            "This separate fictional account is not readable through a family link.",
+            "The index patient may independently report family history with a patient-reported badge; that does not authenticate this statement."
+          ]
+        }
+      ],
+      "observations": []
+    }
+  ],
+  "familyNodes": [
+    {
+      "alias": "FN_MOTHER",
+      "id": "cfb4d357-5a91-57c7-a43f-1785e7b4fed8",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "label": "Biological mother",
+      "relationshipToIndex": "mother",
+      "basis": "biological",
+      "side": "maternal",
+      "degree": "first",
+      "lineageSource": "patient_reported"
+    },
+    {
+      "alias": "FN_FATHER",
+      "id": "4b6d9454-b097-5cfe-8a69-5c46927fa7a2",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "label": "Biological father",
+      "relationshipToIndex": "father",
+      "basis": "biological",
+      "side": "paternal",
+      "degree": "first",
+      "lineageSource": "patient_reported"
+    },
+    {
+      "alias": "FN_MGM",
+      "id": "42fc540f-121d-5bd7-a1ca-dddf49f0b7bc",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "label": "Maternal grandmother",
+      "relationshipToIndex": "grandmother",
+      "basis": "biological",
+      "side": "maternal",
+      "degree": "second",
+      "lineageSource": "patient_reported"
+    },
+    {
+      "alias": "FN_HALF",
+      "id": "8fac2428-954f-5c6d-830b-5ab5ee06c92a",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "label": "Maternal half-sibling",
+      "relationshipToIndex": "half_sibling",
+      "basis": "biological",
+      "side": "maternal",
+      "degree": "second",
+      "lineageSource": "patient_reported"
+    },
+    {
+      "alias": "FN_ADOPTIVE",
+      "id": "10be7e07-6343-566b-a27b-d697c150c6bd",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "label": "Adoptive parent",
+      "relationshipToIndex": "parent",
+      "basis": "adoptive",
+      "side": "unknown",
+      "degree": "not_applicable",
+      "lineageSource": "patient_reported"
+    },
+    {
+      "alias": "FN_UNKNOWN",
+      "id": "03c85480-ad2f-5515-8e21-bfcb6ccb75a4",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "label": "Paternal grandfather, lineage uncertain",
+      "relationshipToIndex": "grandfather",
+      "basis": "unknown",
+      "side": "paternal",
+      "degree": "unknown",
+      "lineageSource": "patient_reported"
+    }
+  ],
+  "familyAssertions": [
+    {
+      "alias": "FA_MOTHER",
+      "id": "1812d4a8-0752-5ef6-857e-133c627b899a",
+      "versionNumber": 1,
+      "nodeId": "cfb4d357-5a91-57c7-a43f-1785e7b4fed8",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "ownerPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "conditionKey": "breast_cancer",
+      "ageAtDiagnosis": 44,
+      "agePrecision": "exact_years",
+      "sourceKind": "patient_reported",
+      "isSynthetic": true
+    },
+    {
+      "alias": "FA_FATHER",
+      "id": "835d476f-0a98-5675-b21c-5533f14ccefa",
+      "versionNumber": 1,
+      "nodeId": "4b6d9454-b097-5cfe-8a69-5c46927fa7a2",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "ownerPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "conditionKey": "type_2_diabetes",
+      "ageAtDiagnosis": 48,
+      "agePrecision": "exact_years",
+      "sourceKind": "patient_reported",
+      "isSynthetic": true
+    },
+    {
+      "alias": "FA_MGM",
+      "id": "7bbeab8c-a4de-5bac-86f3-803676ab28de",
+      "versionNumber": 1,
+      "nodeId": "42fc540f-121d-5bd7-a1ca-dddf49f0b7bc",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "ownerPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "conditionKey": "hypertension",
+      "ageAtDiagnosis": 52,
+      "agePrecision": "exact_years",
+      "sourceKind": "patient_reported",
+      "isSynthetic": true
+    },
+    {
+      "alias": "FA_ADOPTIVE",
+      "id": "fafca6fe-0f50-580e-b195-e45c48664475",
+      "versionNumber": 1,
+      "nodeId": "10be7e07-6343-566b-a27b-d697c150c6bd",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "ownerPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "conditionKey": "type_2_diabetes",
+      "ageAtDiagnosis": 55,
+      "agePrecision": "approximate",
+      "sourceKind": "patient_reported",
+      "isSynthetic": true
+    },
+    {
+      "alias": "FA_UNKNOWN",
+      "id": "aa997504-1152-5008-a13b-0e4594181442",
+      "versionNumber": 1,
+      "nodeId": "03c85480-ad2f-5515-8e21-bfcb6ccb75a4",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "ownerPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "conditionKey": "hypertension",
+      "ageAtDiagnosis": null,
+      "agePrecision": "unknown",
+      "sourceKind": "patient_reported",
+      "isSynthetic": true
+    },
+    {
+      "alias": "FA_MOTHER_RELATIVE",
+      "id": "0c72edbc-0125-5788-a6be-f6e101468c76",
+      "versionNumber": 1,
+      "nodeId": "cfb4d357-5a91-57c7-a43f-1785e7b4fed8",
+      "indexPatientId": "176e8099-4439-5869-9f1a-d2f383b46c70",
+      "ownerPatientId": "dcdb5ae7-8023-5b38-98e2-884e22ea5fb3",
+      "conditionKey": "breast_cancer",
+      "ageAtDiagnosis": 44,
+      "agePrecision": "exact_years",
+      "sourceKind": "relative_reported",
+      "sourceRecordVersionId": "b85efd16-0042-550d-baa6-5e98e3d229b9",
+      "isSynthetic": true
+    }
+  ],
+  "consents": [],
+  "familyShares": [],
+  "familyLinks": [],
+  "demoSetup": {
+    "initialExcludeRecordAliases": [
+      "R09"
+    ],
+    "relativeRecordsNeverInIndexChart": [
+      "R12",
+      "R13"
+    ],
+    "relativeAssertionInitiallyUnavailable": "FA_MOTHER_RELATIVE",
+    "clockPolicy": "Create grants relative to database now; do not seed fixed active expiry."
+  }
+}
