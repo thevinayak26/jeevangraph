@@ -17,7 +17,7 @@ See [the demo guide](docs/SCAN_CHAT_DEMO.md) and [release verification](docs/REL
 - Reviewed source timeline, descriptive creatinine trend and 3D/2D/list HealthGraph.
 - Patient-owned history chat with source citations. Gemini can select the question topic; the local evidence engine supplies the answer. Reports are not sent to that model. No-key/provider-failure fallback remains available.
 - Patient-reported family history and independent adult-relative invitations/shares. A relationship alone never opens another person's records.
-- Simulated facility ingestion. Live hospital connections and ABDM integration are not claimed.
+- Simulated facility ingestion. Live hospital connection and ABDM integration are not claimed.
 
 ## Stack
 
