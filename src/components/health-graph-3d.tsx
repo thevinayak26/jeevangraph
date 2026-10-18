@@ -91,7 +91,7 @@ export default function HealthGraph3D({
     const controls = graph.controls() as { minDistance: number; maxDistance: number };
     controls.minDistance = 180;
     controls.maxDistance = 2000;
-    const distance = (260 + Math.sqrt(nodes.length) * 12) * Math.max(1, 500 / width);
+    const distance = (380 + Math.sqrt(nodes.length) * 16) * Math.max(1, 500 / width);
     graph.cameraPosition({ x: 0, y: 0, z: distance }, { x: 0, y: 0, z: 0 }, 0);
   }
   return (
