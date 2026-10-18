@@ -49,6 +49,8 @@ Implemented and verified locally with separate numerical-analysis permission, cu
 
 ## Phase 4: release verification and presentation
 
+Release preparation and optional onboarding are implemented locally. Hosted configuration and final visual verification remain pending. See [current release status](PHASE_4_STATUS.md).
+
 **Target: hours 12-16.** Freeze scope and prepare a demonstrable release.
 
 - Run the access matrix, ingestion cases, deterministic edge cases and hosted smoke tests.

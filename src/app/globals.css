@@ -3038,3 +3038,47 @@ dialog::backdrop {
 .legend-family {
   background: #967296;
 }
+
+.assessment-shell {
+  max-width: 900px;
+}
+.assessment-eyebrow {
+  color: #13776b;
+  font-weight: 600;
+}
+.assessment-form {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+.assessment-form fieldset {
+  border: 1px solid #cbded8;
+  border-radius: 14px;
+  padding: 20px;
+  min-width: 0;
+}
+.assessment-form legend {
+  font-weight: 650;
+  padding: 0 6px;
+}
+.assessment-form .assessment-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 10px 0;
+}
+.assessment-form .assessment-choice input {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  margin-top: 3px;
+}
+.assessment-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+.assessment-shell li {
+  margin: 12px 0;
+}

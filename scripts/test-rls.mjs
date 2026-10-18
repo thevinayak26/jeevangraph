@@ -32,8 +32,10 @@ try {
     'supabase/migrations/202610180001_secure_records.sql',
     'supabase/migrations/202610180002_evidence_family.sql',
     'supabase/migrations/202610180003_analysis_consent.sql',
+    'supabase/migrations/202610180004_welcome_assessment.sql',
     'supabase/tests/access.sql',
     'supabase/tests/family.sql',
+    'supabase/tests/assessment.sql',
   ]) {
     const output = docker(['exec', '-i', name, 'psql', '-U', 'postgres', '-v', 'ON_ERROR_STOP=1'], {
       input: readFileSync(path, 'utf8'),

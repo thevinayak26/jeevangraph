@@ -150,6 +150,63 @@ if (app) {
   });
   assert.equal(denied.status, 404);
   pass('source endpoint denies wrong session');
+  const firstVisit = await fetch(`${app}/secure`, { headers: { Cookie: cookies('patient') } });
+  assert(new URL(firstVisit.url).pathname === '/secure/welcome');
+  assert((await firstVisit.text()).includes('Your health, in your words'));
+  pass('first signed-in visit offers optional questionnaire');
+  const answers = {
+    schema_version: 1,
+    region: 'north_india',
+    environment: 'urban',
+    allergies: ['food'],
+    conditions: ['unknown'],
+    exposure: 'mosquitoes',
+    family_condition: 'diabetes',
+    relationship: 'parent',
+    basis: 'biological',
+    age_at_diagnosis: 48,
+  };
+  ok(await p.rpc('save_welcome_assessment', { p_answers: answers }));
+  assert.equal(
+    ok(await p.from('welcome_assessments').select('answers'))[0].answers.age_at_diagnosis,
+    48,
+  );
+  assert.equal(ok(await d.from('welcome_assessments').select('*')).length, 0);
+  assert.equal(ok(await s.from('welcome_assessments').select('*')).length, 0);
+  assert(
+    (
+      await p
+        .from('welcome_assessments')
+        .update({ status: 'skipped' })
+        .eq('owner_id', identities.patient.id)
+    ).error,
+  );
+  assert(
+    (
+      await p.rpc('save_welcome_assessment', {
+        p_answers: { ...answers, allergies: ['unknown', 'food'] },
+      })
+    ).error,
+  );
+  assert(
+    (await p.rpc('save_welcome_assessment', { p_answers: { ...answers, allergies: [null] } }))
+      .error,
+  );
+  assert(
+    (await p.rpc('save_welcome_assessment', { p_answers: { ...answers, region: null } })).error,
+  );
+  pass('questionnaire persists privately and rejects direct-write and malformed-RPC bypasses');
+  const summary = await (
+    await fetch(`${app}/secure/welcome`, { headers: { Cookie: cookies('patient') } })
+  ).text();
+  assert(summary.includes('does not prove a genetic variant'));
+  assert(summary.includes('no live local surveillance'));
+  assert.equal(ok(await p.from('family_links').select('id')).length, 0);
+  assert.equal(ok(await p.from('reported_family_history').select('id')).length, 0);
+  pass('questionnaire summarizes reported context without creating relative access or chart facts');
+  ok(await p.rpc('save_welcome_assessment', { p_answers: null }));
+  assert.equal(ok(await p.from('welcome_assessments').select('answers'))[0].answers, null);
+  pass('skip removes previous questionnaire answers and permits records access');
   const html = await (
     await fetch(`${app}/secure`, { headers: { Cookie: cookies('patient') } })
   ).text();

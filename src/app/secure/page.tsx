@@ -27,6 +27,12 @@ export default async function Secure({
     data: { user },
   } = await db.auth.getUser();
   if (!user) redirect('/account');
+  const { data: welcome, error: welcomeError } = await db
+    .from('welcome_assessments')
+    .select('status')
+    .eq('owner_id', user.id)
+    .maybeSingle();
+  if (!welcomeError && !welcome) redirect('/secure/welcome');
   const results = await Promise.all([
     db.from('record_versions').select('*').order('reviewed_at', { ascending: false }),
     db.from('record_drafts').select('*').eq('status', 'pending'),
@@ -59,6 +65,10 @@ export default async function Secure({
         <Link href="/secure/family">Family history</Link>
       </nav>
       <h1>Your private records</h1>
+      <p>
+        <Link href="/secure/welcome">Your optional health questionnaire</Link>: review, update or
+        clear your reported context.
+      </p>
       <p>
         Signed in as {user.email}. Account ID: <code>{user.id}</code>
       </p>

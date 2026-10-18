@@ -122,6 +122,7 @@ export default async function FamilyPage() {
     <main className="secure-shell phase3-shell">
       <nav className="phase3-nav" aria-label="Private workspace">
         <Link href="/secure">Private records</Link>
+        <Link href="/secure/welcome">Health questionnaire</Link>
         <Link href="/secure/intelligence">Evidence & HealthGraph</Link>
         <Link href="/secure/family" aria-current="page">
           Family history

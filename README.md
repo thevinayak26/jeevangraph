@@ -1,3 +1,7 @@
+## Release preparation and optional first-login questionnaire
+
+The optional owner-only questionnaire is implemented and locally tested. See [release status](docs/PHASE_4_STATUS.md) for behavior, privacy, migration 004 and pending hosted/visual verification. The Vercel project exists; deployment is paused while Supabase cloud setup is pending. Synthetic data only.
+
 # JeevanGraph
 
 ## Phase 3: evidence, HealthGraph and independent family consent

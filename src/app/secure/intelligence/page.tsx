@@ -15,6 +15,7 @@ export default async function Intelligence() {
     <main className="secure-shell phase3-shell">
       <nav className="phase3-nav" aria-label="Private workspace">
         <Link href="/secure">Private records</Link>
+        <Link href="/secure/welcome">Health questionnaire</Link>
         <Link href="/secure/intelligence" aria-current="page">
           Evidence & HealthGraph
         </Link>
