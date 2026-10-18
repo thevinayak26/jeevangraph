@@ -50,7 +50,7 @@ export async function PrivateHistorySummary() {
           review it and confirm it to populate this history.
         </p>
       ) : (
-        <details open>
+        <details>
           <summary>My source timeline</summary>
           <ol className="private-timeline">
             {records.map((r) => (

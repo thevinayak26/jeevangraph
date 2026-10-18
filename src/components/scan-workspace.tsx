@@ -82,6 +82,7 @@ export function ScanWorkspace({ compact = false }: { compact?: boolean }) {
     setBusy(true);
     setNotice('');
     try {
+      let completed = items.filter((i) => i.status === 'saved').length;
       for (const item of items.filter((i) => i.status === 'review' && i.proposal)) {
         const proposal = item.proposal!;
         if (!proposal.date || !proposal.facility) {
@@ -100,6 +101,7 @@ export function ScanWorkspace({ compact = false }: { compact?: boolean }) {
         form.set('confirmed', 'yes');
         const result = await importScannedDocument(form);
         if (result.ok) {
+          completed++;
           patch(item.id, { status: 'saved', versionId: result.versionId });
           window.dispatchEvent(new Event('jeevangraph:records-updated'));
         } else {
@@ -107,6 +109,8 @@ export function ScanWorkspace({ compact = false }: { compact?: boolean }) {
           break;
         }
       }
+      if (completed === items.length)
+        window.dispatchEvent(new Event('jeevangraph:import-complete'));
     } finally {
       lock.current = false;
       setBusy(false);
@@ -207,9 +211,9 @@ export function ScanWorkspace({ compact = false }: { compact?: boolean }) {
           disabled={!items.some((i) => ['waiting', 'failed'].includes(i.status)) || busy}
           onClick={() => void scanAll()}
         >
-          {busy ? 'Scanning on this device…' : 'Scan selected files'}
+          {busy ? 'Processing history…' : 'Scan selected files'}
         </button>
-        {busy && (
+        {busy && items.some((i) => i.status === 'scanning') && (
           <button className="button secondary" onClick={() => controller.current?.abort()}>
             Cancel scan
           </button>

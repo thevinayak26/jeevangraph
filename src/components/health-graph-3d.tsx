@@ -41,6 +41,15 @@ export default function HealthGraph3D({
     observer.observe(target);
     return () => observer.disconnect();
   }, []);
+  function resetView() {
+    const graph = graphRef.current;
+    if (!graph) return;
+    const controls = graph.controls() as { minDistance: number; maxDistance: number };
+    controls.minDistance = 180;
+    controls.maxDistance = 2000;
+    const distance = (300 + Math.sqrt(nodes.length) * 15) * Math.max(1, 500 / width);
+    graph.cameraPosition({ x: 0, y: 0, z: distance }, { x: 0, y: 0, z: 0 }, 0);
+  }
   return (
     <div
       ref={container}
@@ -48,6 +57,9 @@ export default function HealthGraph3D({
       role="img"
       aria-label="Interactive 3D evidence graph. Use the accessible evidence list for keyboard navigation."
     >
+      <button type="button" className="button secondary graph3d-reset" onClick={resetView}>
+        Reset 3D view
+      </button>
       <ForceGraph3D
         ref={graphRef}
         graphData={data}
@@ -71,7 +83,7 @@ export default function HealthGraph3D({
           label.position.set(0, 14, 0);
           return label;
         }}
-        onEngineStop={() => graphRef.current?.zoomToFit(0, 50)}
+        onEngineStop={resetView}
         linkColor={() => '#8aa8a2'}
         linkWidth={1.2}
         nodeOpacity={0.96}
