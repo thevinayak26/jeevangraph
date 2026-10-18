@@ -92,7 +92,8 @@ pass('hosted questionnaire renders non-diagnostic saved summary');
 ok(await p.rpc('save_welcome_assessment', { p_answers: null }));
 assert.equal(ok(await p.from('welcome_assessments').select('answers'))[0].answers, null);
 pass('hosted skip clears saved answers');
-const versions = [];
+const versions = [],
+  sourcePaths = [];
 const dates = ['2026-01-06', '2026-03-17', '2026-06-19', '2026-09-09'];
 const values = ['0.90', '1.10', '1.40', '1.60'];
 for (let i = 0; i < 4; i++) {
@@ -104,6 +105,7 @@ for (let i = 0; i < 4; i++) {
       'Cedar Bridge Demo Hospital',
       'Cedar Bridge Demo Hospital',
     ][i];
+  sourcePaths.push(path);
   ok(
     await p.storage
       .from('health-records')
@@ -170,13 +172,7 @@ assert.equal(source.headers.get('cache-control'), 'private, no-store');
 assert((await source.text()).startsWith('%PDF'));
 assert.equal((await page('/api/private-source/' + versions[0], 'stranger')).status, 404);
 pass('hosted server-only source delivery enforces consent and no-cache');
-assert(
-  (
-    await d.storage
-      .from('health-records')
-      .createSignedUrl(`${users.patient.id}/unavailable/source`, 60)
-  ).error,
-);
+assert((await d.storage.from('health-records').createSignedUrl(sourcePaths[0], 60)).error);
 pass('doctor cannot mint private storage URLs');
 const invitation = ok(
   await p.rpc('create_family_invitation', {

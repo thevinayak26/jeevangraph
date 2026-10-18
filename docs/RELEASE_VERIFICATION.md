@@ -19,7 +19,16 @@ This release adds ZIP-to-history scanning and review, personal timeline/metrics,
 
 ## Hosted verification
 
-Pending until the deployment finishes. Do not treat local checks as hosted proof. The final result is appended after live checks.
+- Production is connected at https://jeevangraph.vercel.app, with the cloud database and private storage. Vercel reported the release Ready. Production Auth site/callback URLs are configured.
+- All 15 hosted synthetic access checks passed, including exact-version doctor consent, independent family consent and revocation, anonymous/wrong-account denial, source delivery with private no-store caching, and denial of doctor-created Storage URLs for an actual existing object.
+- Two separate hosted browser rehearsals began with zero reviewed reports and a skipped questionnaire, scanned the clean Desktop ZIP, and confirmed all eight PDFs. The resulting account displayed eight reports, three facilities, two prescriptions and four lab reports. The descriptive creatinine change matched +0.70 mg/dL, +77.8%, 246 days.
+- Editing a proposed report title survived batch publication and appeared in the source citation. The completed import tray automatically collapsed, leaving the populated dashboard visible.
+- Hosted printed-image OCR extracted the March source date, facility, creatinine 1.10 mg/dL and eGFR 88 from the separate PNG test. That duplicate alternative was inspected without publishing it into the eight-PDF account.
+- Hosted chat used the optional Gemini question-only topic router and returned the four uploaded laboratory sources with the correct descriptive change. The interface accurately labels Gemini routing separately from local evidence answers.
+- The hosted 3D graph rendered the twelve authorized patient/report/facility nodes. Its reset control and accessible evidence list were checked. Camera framing was adjusted after visual inspection.
+- Five separate presentation accounts were verified empty through the cloud database after the rehearsals. Their credentials are only in the private Desktop guide and ignored local files. The clean Desktop/public demo ZIP contains exactly eight PDFs.
+
+These checks use fictional documents and scoped synthetic test accounts. They are not a penetration test, clinical validation, handwriting benchmark, or guarantee of provider uptime/free quota. The ZIP file-picker path was exercised end to end; the browser automation interface did not support a native operating-system file-drag gesture.
 
 ## Account and AI boundaries
 
