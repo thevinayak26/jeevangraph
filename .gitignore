@@ -13,3 +13,6 @@ test-results/
 .DS_Store
 .vercel/
 next-env.d.ts
+
+public/scan-assets/
+tmp/

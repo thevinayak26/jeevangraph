@@ -1,3 +1,6 @@
+import { cookies } from 'next/headers';
+import { setQuestionnaireDemoMode } from '@/app/account/preferences';
+import { SourceFileInput } from '@/components/source-file-input';
 import Link from 'next/link';
 import { ReviewFields } from '@/components/review-fields';
 import { redirect } from 'next/navigation';
@@ -32,7 +35,8 @@ export default async function Secure({
     .select('status')
     .eq('owner_id', user.id)
     .maybeSingle();
-  if (!welcomeError && !welcome) redirect('/secure/welcome');
+  const skipQuestionnaire = (await cookies()).get('jg_skip_questionnaire')?.value === '1';
+  if (!welcomeError && !welcome && !skipQuestionnaire) redirect('/secure/welcome');
   const results = await Promise.all([
     db.from('record_versions').select('*').order('reviewed_at', { ascending: false }),
     db.from('record_drafts').select('*').eq('status', 'pending'),
@@ -61,10 +65,27 @@ export default async function Secure({
         <Link href="/secure" aria-current="page">
           Private records
         </Link>
+        <Link href="/secure/import">Scan &amp; import</Link>
+        <Link href="/secure/chat">Ask my history</Link>
         <Link href="/secure/intelligence">Evidence &amp; HealthGraph</Link>
         <Link href="/secure/family">Family history</Link>
       </nav>
       <h1>Your private records</h1>
+      <section className="scan-start panel">
+        <div>
+          <h2>Start with your own reports</h2>
+          <p>
+            Scan, review and confirm a prescription or lab report. Your history, chart and
+            source-linked answers build from what you add.
+          </p>
+        </div>
+        <Link className="button primary" href="/secure/import">
+          Scan &amp; import reports
+        </Link>
+        <Link className="button secondary" href="/secure/chat">
+          Ask my history
+        </Link>
+      </section>
       <p>
         <Link href="/secure/welcome">Your optional health questionnaire</Link>: review, update or
         clear your reported context.
@@ -88,10 +109,29 @@ export default async function Secure({
           Some data could not load. Apply the database migration and verify connection setup.
         </p>
       )}
+      <form action={setQuestionnaireDemoMode} className="demo-questionnaire-bar">
+        <label className="demo-questionnaire-toggle">
+          <input
+            type="checkbox"
+            role="switch"
+            name="skip_questionnaire"
+            value="yes"
+            defaultChecked={skipQuestionnaire}
+          />
+          Skip questionnaire during demos
+        </label>
+        <button className="button secondary">Save demo preference</button>
+        <span>
+          Only skips the welcome step. Saved answers and sharing permissions stay unchanged.
+        </span>
+      </form>
       <div className="secure-grid">
         <section className="panel">
           <h2>1. Add a source report</h2>
-          <p>PDF, PNG or JPEG, up to 5 MB. Manual review required. No automatic OCR is claimed.</p>
+          <p>
+            PDF, PNG or JPEG, up to 4 MB. Use Scan & import for local text recognition, or enter the
+            fields manually here.
+          </p>
           <form action={uploadRecord}>
             <label>
               Report title
@@ -128,12 +168,7 @@ export default async function Secure({
             </label>
             <label>
               Source file
-              <input
-                name="file"
-                type="file"
-                accept="application/pdf,image/png,image/jpeg"
-                required
-              />
+              <SourceFileInput />
             </label>
             <button className="button primary">Upload for review</button>
           </form>

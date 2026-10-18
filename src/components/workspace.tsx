@@ -159,7 +159,9 @@ export function Workspace({ data, section }: { data: WorkspaceData; section: Sec
           </span>
         </Link>
         <div className="workspace-label">Your health workspace</div>
-        <Link href="/account" className="nav-item">Sign in to private records</Link>
+        <Link href="/account" className="nav-item">
+          Sign in to private records
+        </Link>
         <nav aria-label="Main navigation">
           {(isPatient ? nav : nav.filter((n) => n.id === 'overview')).map((item) => (
             <Link
@@ -1395,8 +1397,8 @@ function UploadDialog({ onClose }: { onClose: () => void }) {
       setError('Choose a PDF, PNG or JPEG file.');
       return;
     }
-    if (next.size > 5 * 1024 * 1024) {
-      setError('Choose a file smaller than 5 MiB.');
+    if (next.size > 4_000_000) {
+      setError('Choose a file no larger than 4 MB.');
       return;
     }
     setFile(next);

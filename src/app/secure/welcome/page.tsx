@@ -42,6 +42,8 @@ export default async function Welcome({
     <main className="secure-shell assessment-shell">
       <nav className="phase3-nav" aria-label="Private workspace">
         <Link href="/secure">Private records</Link>
+        <Link href="/secure/import">Scan &amp; import</Link>
+        <Link href="/secure/chat">Ask my history</Link>
         <Link href="/secure/intelligence">HealthGraph</Link>
         <Link href="/secure/family">Family history</Link>
       </nav>

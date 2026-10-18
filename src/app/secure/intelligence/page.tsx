@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import { isConnected, sessionClient } from '@/lib/supabase/server';
 import { EvidenceWorkspace } from '@/components/evidence-workspace';
 import { DemoExplanation } from '@/components/demo-explanation';
+import { PrivateHistorySummary } from '@/components/private-history-summary';
 export const dynamic = 'force-dynamic';
 export default async function Intelligence() {
   if (!isConnected()) redirect('/account');
@@ -16,6 +17,8 @@ export default async function Intelligence() {
       <nav className="phase3-nav" aria-label="Private workspace">
         <Link href="/secure">Private records</Link>
         <Link href="/secure/welcome">Health questionnaire</Link>
+        <Link href="/secure/import">Scan &amp; import</Link>
+        <Link href="/secure/chat">Ask my history</Link>
         <Link href="/secure/intelligence" aria-current="page">
           Evidence & HealthGraph
         </Link>
@@ -26,8 +29,12 @@ export default async function Intelligence() {
         See documented changes, trace their sources and explore relationships. Available history
         only; synthetic test documents only.
       </p>
+      <PrivateHistorySummary />
       <EvidenceWorkspace />
-      <DemoExplanation />
+      <details className="panel">
+        <summary>Separate bundled example, outside your personal history</summary>
+        <DemoExplanation />
+      </details>
     </main>
   );
 }

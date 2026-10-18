@@ -1,4 +1,5 @@
 'use server';
+import { uploadSizeAllowed } from '@/lib/upload-limits';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
@@ -28,8 +29,7 @@ export async function uploadRecord(f: FormData) {
     const date = text(f, 'date') ? z.iso.date().parse(text(f, 'date')) : null;
     const record = text(f, 'record') ? uuid.parse(text(f, 'record')) : null;
     const file = f.get('file');
-    if (!(file instanceof File) || file.size === 0 || file.size > 5 * 1024 * 1024)
-      throw new Error('Invalid file');
+    if (!(file instanceof File) || !uploadSizeAllowed(file.size)) throw new Error('Invalid file');
     const bytes = new Uint8Array(await file.arrayBuffer());
     const media = safeUploadType(bytes);
     if (!media || media !== file.type) throw new Error('Unsupported file content');

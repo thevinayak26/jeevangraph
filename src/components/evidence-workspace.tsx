@@ -59,6 +59,7 @@ export function EvidenceWorkspace() {
     void load();
     const interval = setInterval(() => void load(), 10000);
     window.addEventListener('focus', load);
+    window.addEventListener('jeevangraph:records-updated', load);
     document.addEventListener('visibilitychange', visibility);
     return () => {
       alive = false;
@@ -66,6 +67,7 @@ export function EvidenceWorkspace() {
       active?.abort();
       clearInterval(interval);
       window.removeEventListener('focus', load);
+      window.removeEventListener('jeevangraph:records-updated', load);
       document.removeEventListener('visibilitychange', visibility);
     };
   }, []);

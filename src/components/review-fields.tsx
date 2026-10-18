@@ -10,13 +10,23 @@ type Entry = {
 const empty: Entry = { label: '', value: '', unit: '', sourceExcerpt: '', sourcePage: 1 };
 export function ReviewFields({
   initial,
+  onContentChange,
 }: {
   initial?: { notes?: string; observations?: Entry[] };
+  onContentChange?: (content: { notes: string; observations: Entry[] }) => void;
 }) {
   const [notes, setNotes] = useState(initial?.notes ?? '');
   const [observations, setObservations] = useState<Entry[]>(initial?.observations ?? []);
+  function commit(nextNotes: string, nextRows: Entry[]) {
+    setNotes(nextNotes);
+    setObservations(nextRows);
+    onContentChange?.({ notes: nextNotes, observations: nextRows });
+  }
   function update(i: number, patch: Partial<Entry>) {
-    setObservations((rows) => rows.map((r, n) => (n === i ? { ...r, ...patch } : r)));
+    commit(
+      notes,
+      observations.map((r, n) => (n === i ? { ...r, ...patch } : r)),
+    );
   }
   return (
     <>
@@ -25,7 +35,7 @@ export function ReviewFields({
         Notes and uncertain information
         <textarea
           value={notes}
-          onChange={(e) => setNotes(e.target.value)}
+          onChange={(e) => commit(e.target.value, observations)}
           maxLength={10000}
           rows={3}
         />
@@ -82,7 +92,12 @@ export function ReviewFields({
           <button
             className="button secondary"
             type="button"
-            onClick={() => setObservations((rows) => rows.filter((_, n) => n !== i))}
+            onClick={() =>
+              commit(
+                notes,
+                observations.filter((_, n) => n !== i),
+              )
+            }
           >
             Remove measurement
           </button>
@@ -92,7 +107,7 @@ export function ReviewFields({
         className="button secondary"
         type="button"
         disabled={observations.length >= 100}
-        onClick={() => setObservations((rows) => [...rows, { ...empty }])}
+        onClick={() => commit(notes, [...observations, { ...empty }])}
       >
         Add measurement
       </button>

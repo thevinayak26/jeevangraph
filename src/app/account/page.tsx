@@ -1,3 +1,4 @@
+import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { isConnected } from '@/lib/supabase/server';
 import { authenticate } from './actions';
@@ -8,6 +9,7 @@ export default async function Account({
   searchParams: Promise<{ status?: string }>;
 }) {
   const { status } = await searchParams;
+  const skipQuestionnaire = (await cookies()).get('jg_skip_questionnaire')?.value === '1';
   return (
     <main className="secure-shell">
       <Link href="/patient/overview">JeevanGraph · Preview</Link>
@@ -20,8 +22,8 @@ export default async function Account({
         <section className="panel">
           <h2>Connection setup required</h2>
           <p>
-            Configure Supabase and apply the Phase 2 migration before creating accounts. See
-            docs/PHASE_2_SETUP.md.
+            The private workspace is not connected yet. Explore the synthetic preview while setup is
+            completed.
           </p>
         </section>
       ) : (
@@ -49,6 +51,17 @@ export default async function Account({
                 required
               />
             </label>
+            <label className="demo-questionnaire-toggle">
+              <input
+                type="checkbox"
+                role="switch"
+                name="skip_questionnaire"
+                value="yes"
+                defaultChecked={skipQuestionnaire}
+              />
+              Skip questionnaire during demos
+            </label>
+            <p>You can complete it later. Existing answers stay saved.</p>
             <button className="button primary" name="mode" value="login">
               Sign in
             </button>

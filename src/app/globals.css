@@ -3082,3 +3082,432 @@ dialog::backdrop {
 .assessment-shell li {
   margin: 12px 0;
 }
+.demo-questionnaire-toggle {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+.demo-questionnaire-toggle input {
+  width: 20px !important;
+  min-width: 20px;
+  height: 20px;
+}
+.demo-questionnaire-bar {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: var(--teal-soft);
+  padding: 16px;
+  border-radius: 14px;
+  margin: 22px 0;
+}
+.demo-questionnaire-bar span {
+  color: var(--muted);
+  font-size: 13px;
+}
+/* Private document import and source-linked history. */
+.scan-shell {
+  max-width: 1180px;
+}
+.scan-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding: 24px 0;
+}
+.scan-intro h1 {
+  margin: 16px 0 12px;
+  max-width: 680px;
+}
+.scan-intro > div:first-child > svg {
+  color: var(--primary);
+}
+.scan-intro p {
+  max-width: 670px;
+}
+.scan-fine,
+.chat-fine {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.scan-steps {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  white-space: nowrap;
+  color: var(--teal-text);
+  font-size: 13px;
+}
+.scan-picker {
+  border: 1px dashed var(--primary);
+  background: var(--teal-soft);
+  padding: 28px;
+}
+.scan-picker > label {
+  display: block;
+  font-size: 21px;
+  font-weight: 650;
+  margin-top: 14px;
+}
+.scan-picker input {
+  display: block;
+  max-width: 100%;
+  margin: 18px 0;
+}
+.scan-picker .button {
+  margin-right: 10px;
+}
+.scan-layout {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 24px;
+  margin: 24px 0;
+  align-items: start;
+}
+.scan-queue {
+  position: sticky;
+  top: 20px;
+}
+.scan-queue-item {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  align-items: center;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 13px;
+  margin: 10px 0;
+  background: var(--surface);
+  color: var(--text);
+}
+.scan-queue-item span {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+.scan-queue-item small {
+  display: block;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.scan-queue-item.selected {
+  border-color: var(--primary);
+  background: var(--teal-soft);
+}
+.scan-queue .button {
+  display: flex;
+  margin-top: 12px;
+}
+.scan-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.scan-review form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.scan-review fieldset {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+.scan-review label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.scan-review .assessment-choice {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.scan-review .assessment-choice input {
+  width: 20px;
+  min-width: 20px;
+}
+.scan-source {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--surface-soft);
+  padding: 14px;
+  border-radius: 10px;
+  max-height: 340px;
+  overflow: auto;
+  font-size: 12px;
+}
+.scan-warnings {
+  padding: 16px 16px 16px 34px;
+  background: var(--orange-soft);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.scan-start {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.scan-start > div {
+  flex: 1 1 400px;
+}
+.history-overview-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+.history-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 24px 0;
+  border-block: 1px solid var(--border);
+}
+.history-metrics > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 14px;
+  border-right: 1px solid var(--border);
+}
+.history-metrics strong {
+  font-size: 30px;
+  color: var(--primary);
+}
+.history-metrics span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.private-timeline {
+  list-style: none;
+  padding: 0;
+  max-height: 500px;
+  overflow: auto;
+}
+.private-timeline li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+.private-timeline time {
+  font-size: 13px;
+  color: var(--muted);
+}
+.private-timeline p {
+  margin: 7px 0;
+}
+.chat-shell {
+  max-width: 960px;
+}
+.chat-heading {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 24px 0 8px;
+}
+.chat-heading > svg {
+  color: var(--primary);
+}
+.chat-heading h1 {
+  margin: 0;
+}
+.chat-mode {
+  font-size: 13px;
+  color: var(--teal-text);
+}
+.chat-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0;
+}
+.chat-prompts .button {
+  font-size: 12px;
+}
+.chat-empty {
+  text-align: center;
+  padding: 40px 24px;
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+.chat-empty > svg {
+  color: var(--primary);
+  margin: 0 auto 16px;
+}
+.chat-question {
+  margin-left: auto !important;
+  max-width: 80%;
+  width: fit-content;
+  padding: 14px 18px;
+  background: var(--teal-soft);
+  border-radius: 16px 16px 3px 16px;
+}
+.chat-answer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+.chat-turn {
+  margin: 24px 0;
+}
+.chat-answer-mode {
+  font-size: 12px;
+  color: var(--teal-text);
+}
+.chat-card {
+  border-left: 3px solid var(--primary);
+  padding: 4px 0 8px 16px;
+  margin: 20px 0;
+}
+.chat-card details {
+  font-size: 13px;
+}
+.chat-citation {
+  margin: 12px 0;
+  padding: 12px;
+  background: var(--surface-soft);
+  border-radius: 8px;
+}
+.chat-citation blockquote {
+  margin: 10px 0 0;
+  color: var(--muted);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.chat-notice {
+  font-size: 12px !important;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.chat-composer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 26px;
+}
+.chat-composer > label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.chat-composer textarea {
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 14px;
+}
+.chat-composer > div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.chat-composer .assessment-choice {
+  display: flex;
+  gap: 12px;
+  font-weight: 400;
+  font-size: 13px;
+}
+.chat-composer .assessment-choice input {
+  width: 20px;
+  min-width: 20px;
+}
+@media (max-width: 760px) {
+  .scan-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .scan-layout {
+    grid-template-columns: 1fr;
+  }
+  .scan-queue {
+    position: static;
+  }
+  .scan-meta {
+    grid-template-columns: 1fr;
+  }
+  .history-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+  .history-overview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .private-timeline li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .chat-heading {
+    align-items: flex-start;
+  }
+  .chat-question {
+    max-width: 95%;
+  }
+  .scan-steps {
+    white-space: normal;
+  }
+  .scan-picker {
+    padding: 20px;
+  }
+  .chat-answer {
+    padding: 18px;
+  }
+}
+.scan-picker.is-dragging {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+.scan-batch-review {
+  margin: 24px 0;
+  background: var(--teal-soft);
+}
+.scan-batch-review .assessment-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 18px 0;
+}
+.scan-batch-review input {
+  width: 20px !important;
+  min-width: 20px;
+  height: 20px;
+}
+.scan-complete {
+  margin: 24px 0;
+  border-color: var(--primary);
+}
+.scan-complete > svg {
+  color: var(--primary);
+}
+.scan-complete .button {
+  margin: 8px 12px 0 0;
+}
+.dashboard-import {
+  margin: 24px 0;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+.dashboard-import > summary {
+  cursor: pointer;
+  font-weight: 650;
+  margin-bottom: 18px;
+}
+.dashboard-import .scan-layout {
+  grid-template-columns: minmax(210px, 0.7fr) minmax(0, 1.8fr);
+}
+@media (max-width: 760px) {
+  .dashboard-import .scan-layout {
+    grid-template-columns: 1fr;
+  }
+}

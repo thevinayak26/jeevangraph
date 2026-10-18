@@ -1,3 +1,5 @@
+> Historical preparation log. The user later approved final deployment and ZIP import. Current release evidence is in [RELEASE_VERIFICATION.md](RELEASE_VERIFICATION.md), with the current mentor flow in [SCAN_CHAT_DEMO.md](SCAN_CHAT_DEMO.md). The earlier hold and pending-setup notes below describe their point in time.
+
 # JeevanGraph release preparation and optional onboarding
 
 ## Implemented
@@ -28,7 +30,7 @@ The existing `/secure` first-visit redirect is offered when the table is reachab
 
 ## Verified locally
 
-- 32 unit/domain tests, including invalid questionnaire inputs and non-diagnostic output boundaries.
+- 33 unit/domain tests, including invalid questionnaire inputs and non-diagnostic output boundaries.
 - PostgreSQL RLS matrix, including new questionnaire owner separation, skip, clear, anonymous denial and direct-write denial.
 - 25 actual Supabase/HTTP connected checks, including first-visit routing, persisted questionnaire summary, no implicit family entries and malformed direct RPC rejection.
 - 22 Phase 3 actual-session checks covering family privacy, analysis consent, source correction and revocation.
@@ -36,18 +38,28 @@ The existing `/secure` first-visit redirect is offered when the table is reachab
 
 Questionnaire visual/mobile browser QA remains pending. The old local browser error tab was rejected by browser URL policy; this is not a successful visual check. Earlier Phase 3 visual evidence does not verify the new questionnaire screen.
 
+## Current release hold
+
+The user requested local testing before any new Vercel deployment. Do not push GitHub main, because the connected Vercel project deploys main automatically. The current local candidate is available on http://127.0.0.1:3102/account. Synthetic review credentials are in a private output file outside the repository, not in this document. Latest upload-limit and release-test changes are intentionally unpushed.
+
 ## Hosting status
 
-- Vercel Hobby project `jeevangraph` created in the user's existing account for the existing GitHub repository.
-- No deployment started in this work: user asked to wait during Supabase setup.
-- No Supabase cloud project credentials received/configured. Do not copy local URLs or local service keys into Vercel.
+- Vercel Hobby project `jeevangraph` exists. Read-only dashboard inspection found an existing Ready production deployment of commit `cc949bc`; this turn did not trigger it or deploy the latest candidate.
+- All five migration files were applied atomically through the Supabase SQL editor to the fresh cloud project `mlsrnsudpmveclwxsaja`. Thirteen public application tables have RLS enabled. This manual application does not populate Supabase CLI migration history; reconcile history before using a future CLI database push.
+- Cloud bucket verified through the Supabase API: private, PDF/PNG/JPEG, 4,000,000-byte maximum. Schema changes alone are not proof of a complete hosted access test.
+- Existing cloud keys are captured in ignored local configuration with restrictive file permissions. They have not been stored in Vercel. The next connection/deployment remains on hold for user testing.
 - No live Gemini calls. Deterministic operation remains the default.
-- Production runtime audit previously clean; known development-only dependency advisories remain documented in Phase 3 setup and need reassessment before any claim of a clean full audit.
+- Production runtime audit rechecked: zero reported advisories. Known development-only dependency advisories remain documented in Phase 3 setup.
+- Hosted smoke script is prepared with an exact project guard and explicit synthetic-test opt-in. It has not run against the cloud and must not be described as passing.
+
+## Hosting compatibility
+
+The local candidate reduces uploads from 5 MB to 4 MB (4,000,000 bytes), with browser/server/bucket checks and multipart headroom. Vercel's documented function request/response cap is 4.5 MB: https://vercel.com/docs/functions/limitations. Migration 005 enforces the storage cap. Historical Phase 2 documentation describes the previous 5 MB local limit and is superseded by this release note.
 
 ## Remaining release gates
 
-1. User creates/signs into a free Supabase cloud project and securely configures the three required variables in Vercel: public project URL, public publishable key and server-only service-role key. Never expose the service-role key through a NEXT_PUBLIC variable, source file, issue or screenshot.
-2. Apply all four migrations to the intended fresh cloud project. Verify bucket privacy and role provisioning. Use synthetic data only.
+1. After the user approves the local candidate, securely configure the three required variables in Vercel: public project URL, public publishable key and server-only service-role key. Never expose the service-role key through a NEXT_PUBLIC variable, source file, issue or screenshot.
+2. Verify the applied five-migration cloud schema with real synthetic sessions, trusted test role provisioning and denied access cases. Use synthetic data only.
 3. Configure the production Auth site URL and approved redirect URLs. Do not disable email confirmation simply to bypass delivery limits. Verify the account's actual email quotas.
 4. Build/deploy from the tested commit and verify the public URL. Confirm no local endpoint has leaked into the hosted build.
 5. Run hosted synthetic owner/doctor/relative/stranger access checks and private-source/no-cache checks. Local-only integration scripts intentionally refuse non-local Supabase; do not remove their guard casually. Use a reviewed hosted smoke procedure.

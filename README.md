@@ -1,82 +1,64 @@
-## Release preparation and optional first-login questionnaire
-
-The optional owner-only questionnaire is implemented and locally tested. See [release status](docs/PHASE_4_STATUS.md) for behavior, privacy, migration 004 and pending hosted/visual verification. The Vercel project exists; deployment is paused while Supabase cloud setup is pending. Synthetic data only.
-
 # JeevanGraph
 
-## Phase 3: evidence, HealthGraph and independent family consent
+A patient-controlled synthetic health-history prototype with local document scanning, source-linked answers, consent and family context.
 
-The locally verified connected workspace now includes source-linked numerical observations, 3D/2D/list evidence exploration, self-attested adult-relative links and independently controlled family-condition sharing. Existing read grants do not authorize numerical analysis; patients must select the separate option.
+## Mentor flow
 
-Open `/secure/intelligence` or `/secure/family` after signing in. The optional Gemini adapter is limited to fixed fictional facts, remains disabled by default, and has a no-key fallback. No successful live model request or hosted deployment is claimed.
+**Fresh empty account → skip optional questionnaire → drop a history ZIP → review and confirm → populated timeline, charts, chat and 3D HealthGraph.**
 
-See [Phase 3 setup and contracts](docs/PHASE_3_SETUP.md), [verification status](docs/PHASE_3_STATUS.md) and [design decisions](docs/PHASE_3_DESIGN.md).
+See [the demo guide](docs/SCAN_CHAT_DEMO.md) and [release verification](docs/RELEASE_VERIFICATION.md). The fictional history ZIP is available in the import area. No actual patient data is supplied with the repository.
 
-## Phase 2: connected records and consent
+## Included
 
-The authenticated synthetic workspace is implemented and tested with local Supabase Auth, Storage and PostgreSQL. Open `/account`, then `/secure`. Existing role routes remain explicitly fictional previews.
+- Supabase email/password authentication, private Storage and owner/recipient PostgreSQL access rules.
+- Optional questionnaire with an explicit browser-session demo-skip switch.
+- ZIP upload/drop, PDF text extraction and printed-English OCR for image sources, followed by patient review. No clinical verification or authenticity claim.
+- Immutable reviewed sources, exact-version doctor grants, separate numerical-analysis consent, expiry and revocation.
+- Reviewed source timeline, descriptive creatinine trend and 3D/2D/list HealthGraph.
+- Patient-owned history chat with source citations. Gemini can select the question topic; the local evidence engine supplies the answer. Reports are not sent to that model. No-key/provider-failure fallback remains available.
+- Patient-reported family history and independent adult-relative invitations/shares. A relationship alone never opens another person's records.
+- Simulated facility ingestion. Live hospital connections and ABDM integration are not claimed.
 
-See [Phase 2 setup and contracts](docs/PHASE_2_SETUP.md) and [verification status](docs/PHASE_2_STATUS.md). No hosted deployment or clinical validation is claimed. Use synthetic documents only.
+## Stack
 
-A patient-controlled health-history workspace connecting source records, longitudinal measurements and family context.
+Next.js 16.4.2, React 19.3.1, TypeScript 6.0.3, Tailwind 4.3.3, Supabase, Recharts 3.10.1, react-force-graph-3d 1.29.2, PDF.js 6.4.299, Tesseract.js 7.0.0 with English data, fflate 0.8.3. All direct versions are pinned in package.json.
 
-## Included Phase 1 preview
+## Local setup
 
-- Responsive patient overview, timeline, searchable record library and source inspector.
-- Four-point kidney measurement chart with a source-linked data table.
-- Patient-reported biological/social family context and a 2D evidence map.
-- Separate doctor, facility-admin and platform-admin previews.
-- Light, dark and system appearance settings.
-- Fictional fixtures only. Preview routes do not sign in or grant consent. Real sign-in and persistent consent are in the separate Phase 2 workspace; hospital connections and clinical validation are not included.
-
-## Run locally
-
-Requirements: Node 24.x and npm.
+Node 24.x and npm are required.
 
 ```bash
 npm ci
+cp .env.example .env.local
 npm run dev
 ```
 
-Open the Local URL printed by the server. The root opens the patient workspace. The role selector opens explicitly labeled previews; it is not an authentication or authorization system.
+Configure the environment locally and apply all six migration files in filename order. Before each build/dev run the asset preparation script copies pinned OCR/PDF workers and language data to the same-origin public asset directory. Never commit actual service-role or Gemini keys.
+
+The root opens sign-in when Supabase is configured, otherwise the explicitly synthetic preview. A new signed-in account has no bundled medical history. Mentor logins are provided privately outside the repository. Default Supabase email delivery may be restricted; see the demo guide rather than assuming arbitrary public signup works.
 
 ## Checks
 
 ```bash
-npm run typecheck
-npm run lint
 npm test
+npm run lint
+npm run typecheck
+npm run test:rls
 npm run build
 ```
 
-The domain tests verify fixture projection, source values, unknown dates and relationship handling. They do not prove database security. Phase 2 adds separate PostgreSQL access tests and connected Supabase session/storage tests; see the setup guide.
+Local connected checks are documented in [Phase 2 setup](docs/PHASE_2_SETUP.md), [Phase 3 setup](docs/PHASE_3_SETUP.md) and the demo guide. The hosted release smoke script has an exact project guard and explicit synthetic-data opt-in; never point it at a project containing actual patient records.
 
-## Configuration
+## Boundaries
 
-Copy `.env.example` to `.env.local` when connecting services. Keep private keys out of source control and client-side code.
+Synthetic data only. Extraction and arithmetic are not validated clinical reasoning. Recorded medicine entries may be historical and never constitute instructions to start, stop or change treatment. Family history is not genetic proof. Guardian/minor authority, handwriting recognition, live regional surveillance, production medical governance and complete auditing/retention/abuse controls are outside this prototype.
 
-- Supabase Auth/Postgres/private Storage is implemented for the connected workspace.
-- Gemini Developer API `gemini-3.5-flash-lite` has an optional fixed-fictional-fact adapter, disabled by default.
-- By default the app makes no external inference calls. The synthetic preview runs without service credentials; connected records require Supabase configuration.
-- The explanation feature must preserve a deterministic fallback, synthetic-only processing and current evidence permissions.
+The chosen services have no-cost options, quotas and eligibility constraints. No perpetual free capacity or model availability is guaranteed. Billing status cannot be certified by the app; provider failure falls back to local evidence.
 
-## Product flow and roadmap
+## Further context
 
-- [Website flowchart](docs/WEBSITE_FLOWCHART.md)
-- [Visual website flowchart](docs/WEBSITE_FLOWCHART.svg)
 - [Four-phase implementation plan](docs/FOUR_PHASE_PLAN.md)
-- [Phase 1 verification](docs/PHASE_1_STATUS.md)
-
-## Data boundaries
-
-- All people, facilities, results and identifiers are fictional.
-- Relatives' independently owned source records are excluded from the index-patient workspace projection.
-- Doctor and operational previews receive no patient record, measurement or family payload.
-- The synthetic seed is a development asset, not a patient database. Never replace it with real medical data or ship real records as static assets.
-- The source specimens are not valid prescriptions, reports or vaccination certificates.
-
-## Repository
-
-Source repository: [thevinayak26/jeevangraph](https://github.com/thevinayak26/jeevangraph).
-
-Track application source, documentation, small fictional fixtures and the dependency lockfile. Exclude credentials, build output and local runtime/test artifacts.
+- [Phase 2 security and API contracts](docs/PHASE_2_SETUP.md)
+- [Phase 3 evidence and family design](docs/PHASE_3_DESIGN.md)
+- [Phase 3 setup and API contracts](docs/PHASE_3_SETUP.md)
+- [Website flowchart](docs/WEBSITE_FLOWCHART.md)
