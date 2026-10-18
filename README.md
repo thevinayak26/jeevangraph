@@ -1,11 +1,9 @@
 # JeevanGraph
-
 A patient-controlled synthetic health-history prototype with local document scanning, source-linked answers, consent and family context.
 
 ## Mentor flow
 
 **Fresh empty account → skip optional questionnaire → drop a history ZIP → review and confirm → populated timeline, charts, chat and 3D HealthGraph.**
-
 See [the demo guide](docs/SCAN_CHAT_DEMO.md) and [release verification](docs/RELEASE_VERIFICATION.md). The fictional history ZIP is available in the import area. No actual patient data is supplied with the repository.
 
 ## Included
